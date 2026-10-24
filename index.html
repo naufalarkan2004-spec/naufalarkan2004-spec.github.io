@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naufal Arkan Muhana | Data Analyst Portfolio</title>
+<meta name="theme-color" content="#F7F5FC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='24' height='24' rx='6' fill='%23171622'/%3E%3Cpath d='M7 17V7l10 10V7' stroke='%23B8A9E8'/%3E%3Ccircle cx='7' cy='17' r='1.6' fill='%23171622' stroke='%23F7F5FC'/%3E%3Ccircle cx='17' cy='7' r='1.6' fill='%23171622' stroke='%23F7F5FC'/%3E%3C/svg%3E">
+<meta name="description" content="Portfolio of Naufal Arkan Muhana: entrepreneurship graduate building data analyst skills with SQL, Python and Tableau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Digital Lavender system. Palette: Digital Lavender #B8A9E8 (signature accent), Deep Lavender #8270C4 (graphics),
+   Midnight Charcoal #171622 (text, dark band), Lavender White #F7F5FC (page), Neutral Gray #8B8796 (decoration only).
+   Supporting: Ink Lavender #5B49A3 for small accent text, Muted #5C566C for body text (both pass contrast). Fonts: 2. */
+:root{
+  --bg:#F7F5FC; --card:#FFFFFF; --fg:#171622; --muted:#5C566C; --line:#E2DCF2; --soft:#EEE9FA;
+  --lav:#B8A9E8; --deep:#8270C4; --ink:#5B49A3; --charcoal:#171622; --gray:#8B8796;
+  --icon-accent:#8270C4;
+  --display:"Sora","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;overflow-x:clip;background:var(--bg);color:var(--fg);font:400 1rem/1.65 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance;overflow-wrap:break-word}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+mark{background:linear-gradient(transparent 62%,rgba(184,169,232,.55) 62%);color:inherit}
+.ic{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em}
+.chip-ic{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--fg);flex:none}
+.chip-ic .ic{width:22px;height:22px;vertical-align:0}
+.chip-ic.sm{width:32px;height:32px;border-radius:10px}.chip-ic.sm .ic{width:20px;height:20px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(247,245,252,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+  margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top .wrap{display:flex;align-items:center;gap:6px 28px;padding-block:10px;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;text-decoration:none;font-size:1rem;color:var(--fg)}
+.mark{width:32px;height:32px;flex:none}
+nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;max-width:100%}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem;white-space:nowrap;padding:6px 12px;border-radius:999px}
+nav a:hover,nav a.on{background:var(--soft);color:var(--fg)}
+@media (max-width:640px){nav{margin-left:0;width:100%}}
+/* vertical side navigation on wide screens */
+@media (min-width:1100px){
+  body{padding-left:calc(220px + 16px)}
+  .top{position:fixed;top:0;left:0;bottom:0;width:220px;margin:0;padding:28px 18px;border-bottom:0;border-right:1px solid var(--line);background:var(--bg);backdrop-filter:none;overflow-y:auto}
+  .top .wrap{flex-direction:column;align-items:flex-start;flex-wrap:nowrap;gap:28px;padding-block:0;max-width:none;margin:0}
+  nav{flex-direction:column;gap:2px;margin:0;width:100%;overflow:visible}
+  nav a{display:block;white-space:normal;border-radius:10px;padding:9px 12px;border-left:3px solid transparent}
+  nav a.on{border-left-color:var(--deep);border-radius:4px 10px 10px 4px}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-weight:600;text-decoration:none;border:2px solid var(--lav);font-size:1rem;line-height:1.2;border-radius:999px}
+.btn .ic{width:1.1em;height:1.1em;vertical-align:0}
+.btn.solid{background:var(--lav);color:var(--charcoal)}
+.btn.solid:hover{background:#A394DE;border-color:#A394DE}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--deep)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.small{padding:8px 16px;font-size:.92rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:36px 40px;align-items:center;padding-block:56px 36px}
+.hero::before{content:"";position:absolute;inset:0 -40px;z-index:-1;pointer-events:none;
+  background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;
+  opacity:.55;-webkit-mask-image:radial-gradient(ellipse 70% 75% at 70% 40%,#000,transparent 75%);mask-image:radial-gradient(ellipse 70% 75% at 70% 40%,#000,transparent 75%)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;font-size:.95rem;margin-bottom:18px;background:var(--card);border:1px solid var(--line);padding:6px 14px 6px 10px;border-radius:999px}
+h1{font-size:clamp(2.1rem,5.4vw,3.5rem);font-weight:700;max-width:14ch;letter-spacing:-.015em}
+.lede{font-size:clamp(1.1rem,2.2vw,1.3rem);color:var(--muted);max-width:40ch;margin-top:22px;line-height:1.5}
+.flowfig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:0 1px 3px rgba(23,22,34,.05)}
+.flowfig > svg{display:block;width:100%;height:auto}
+.strip{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 20px;margin-top:8px}
+@media (max-width:760px){.strip{grid-template-columns:1fr}}
+.strip > div{padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.sti{width:24px;height:24px;margin-bottom:10px;display:block}
+.num{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.05;font-variant-numeric:tabular-nums;color:var(--fg)}
+.lbl{color:var(--muted);font-size:.92rem;margin-top:8px;line-height:1.4}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:44px}}
+
+/* sections with node-and-line divider */
+section{padding-block:0 56px}
+section::before{content:"";display:block;height:9px;margin-bottom:52px;
+  background:radial-gradient(circle at 4.5px 4.5px,var(--lav) 0 3.5px,var(--deep) 3.5px 4.5px,transparent 5px) 0 0/9px 9px no-repeat,linear-gradient(var(--line),var(--line)) 14px 4px/calc(100% - 14px) 1px no-repeat}
+.sec-head{display:grid;grid-template-columns:280px 1fr;gap:12px 32px;margin-bottom:28px;align-items:center}
+.sec-head h2{display:flex;align-items:center;gap:12px;font-size:clamp(1.5rem,3vw,2rem);font-weight:700}
+.sec-head p{color:var(--muted);max-width:56ch}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+.about p{max-width:62ch;font-size:1.1rem}.about p + p{margin-top:14px}
+
+/* experience */
+.group-title{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink);margin:30px 0 12px}
+.group-title .ic{color:var(--deep)}
+.row{display:grid;grid-template-columns:220px 1fr;gap:6px 32px;padding:20px 24px;margin-bottom:12px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+.when{display:flex;align-items:center;gap:8px;align-self:start;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;font-size:.98rem}
+.when .ic{width:1em;height:1em;color:var(--deep);vertical-align:0}
+.row h3{font-size:1.1rem;margin-bottom:4px;font-weight:600}
+.org{color:var(--muted);margin-bottom:10px}
+.row ul{margin:0;padding-left:1.1em;max-width:66ch}.row li + li{margin-top:6px}.row li::marker{color:var(--deep)}
+@media (max-width:760px){.row{grid-template-columns:1fr;padding:18px}}
+
+/* tags */
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{background:var(--soft);color:var(--ink);padding:3px 12px;border-radius:999px;font-size:.9rem;font-weight:500}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.skill h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:14px;font-weight:600}
+.skills-note{color:var(--muted);font-size:.95rem;margin-top:18px;max-width:64ch}
+@media (max-width:760px){.skills{grid-template-columns:1fr}}
+
+/* workflow */
+.flow-title{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink);margin:36px 0 14px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none;padding:0;margin:0;counter-reset:f}
+.flow li{position:relative;padding:18px 18px 16px;border:1px solid var(--line);background:var(--card);border-radius:16px}
+.flow li + li::before{content:"";position:absolute;left:-15px;top:34px;width:16px;height:1px;background:var(--deep)}
+.flow li .chip-ic{margin-bottom:12px}
+.flow b{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:.92rem;font-weight:600;margin-bottom:6px}
+.flow .n{font-style:normal;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--charcoal);color:var(--lav);font-size:.75rem}
+.flow span{display:block;font-size:.95rem;line-height:1.4;color:var(--muted)}
+.flow em{display:block;font-style:normal;color:var(--ink);font-size:.88rem;font-weight:500;margin-top:8px}
+@media (max-width:900px){.flow{grid-template-columns:1fr}.flow li + li::before{display:none}}
+
+/* projects */
+.projects{display:grid;gap:24px}
+.proj{padding:26px;background:var(--card);border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:22px 44px}
+.proj.pending{border-style:dashed;border-color:var(--deep);background:rgba(255,255,255,.6)}
+.thumb{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px;background:var(--soft)}
+.thumb svg{display:block;width:100%;height:auto}
+.thumb{position:relative;isolation:isolate}
+.thumb img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;filter:grayscale(.7) sepia(.25) hue-rotate(215deg) saturate(.9) contrast(1.05) brightness(.97);transform:scale(1.01);transition:filter .5s ease,transform .6s ease}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#B8A9E8 0%,#8270C4 100%);mix-blend-mode:soft-light;opacity:.85;pointer-events:none;transition:opacity .5s ease}
+.thumb:hover img,.thumb:focus-within img{filter:none;transform:scale(1.04)}
+.thumb:hover::after,.thumb:focus-within::after{opacity:0}
+@media (hover:none){.thumb img{filter:grayscale(.2) sepia(.1) hue-rotate(215deg) saturate(1)}.thumb::after{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.thumb img,.thumb::after{transition:none}.thumb:hover img{transform:none}}
+.proj h3{font-size:1.3rem;margin-bottom:10px;font-weight:700;line-height:1.25}
+.badge{display:inline-block;font-size:.85rem;font-weight:600;padding:3px 12px;background:var(--lav);color:var(--charcoal);margin-bottom:10px;border-radius:999px}
+.proj .tags{margin:14px 0 20px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.proj dl{margin:0;display:grid;gap:16px;align-content:start}
+.proj dt{font-weight:600;font-size:.88rem;color:var(--ink);margin-bottom:3px;letter-spacing:.02em}
+.proj dd{margin:0;max-width:62ch}.proj dd ul{margin:0;padding-left:1.1em}.proj dd li + li{margin-top:6px}.proj dd li::marker{color:var(--deep)}
+.proj .pending-note{color:var(--muted);font-size:.97rem;border-top:1px dashed var(--line);padding-top:12px}
+@media (max-width:860px){.proj{grid-template-columns:1fr;padding:20px}}
+
+/* data snapshot */
+.snap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.chart{border:1px solid var(--line);background:var(--card);padding:22px 22px 18px;border-radius:20px}
+.chart h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:8px;font-weight:700}
+.chart .sub{color:var(--muted);font-size:.9rem;margin-bottom:16px;line-height:1.4}
+.bars{display:grid;gap:14px}
+.bar .name{display:flex;justify-content:space-between;gap:10px;font-size:.92rem;margin-bottom:5px}
+.bar .val{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.track{display:block;height:10px;background:#E6E0F5;position:relative;border-radius:999px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--deep);border-radius:999px}
+.bar.hot .track i{background:var(--ink)}
+.axis{display:flex;justify-content:space-between;color:var(--muted);font-size:.78rem;margin-top:8px;font-variant-numeric:tabular-nums}
+.snap-note{color:var(--muted);font-size:.92rem;margin-top:18px;max-width:70ch}
+@media (max-width:900px){.snap{grid-template-columns:1fr}}
+
+/* contact + footer: Midnight Charcoal band */
+.contact,footer{position:relative;color:#F7F5FC}
+.contact::after,footer::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--charcoal);z-index:-1}
+.contact{--icon-accent:#B8A9E8;margin-top:24px;padding-block:56px}
+.contact::before{display:none}
+.contact .sec-head p{color:#B9B4C8}
+.contact .chip-ic{background:rgba(184,169,232,.16);color:#F7F5FC}
+.contact p.lead{max-width:52ch;font-size:1.1rem;margin-bottom:24px;color:#E6E2F2}
+.contact .btn.ghost{color:var(--lav);border-color:var(--lav)}.contact .btn.ghost:hover{background:rgba(184,169,232,.14)}
+.mail{margin-top:20px;color:#B9B4C8}.mail b{color:#F7F5FC;user-select:all}
+footer{padding-block:0 36px;color:#B9B4C8;font-size:.92rem}
+footer .wrap{border-top:1px solid #2E2C40;padding-top:20px}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* about: text + data-flow diagram */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px 48px;align-items:center}
+.about-text p{max-width:62ch}
+.skillnet{padding:10px}.skillnet > svg{width:100%;height:auto}.skillnet .lt{paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+<symbol id="i-gh" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="ic-data-analysis" viewBox="0 0 24 24"><title>Data Analysis</title><g stroke="currentColor"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M7.5 12.5v-2M10 12.5v-5M12.5 12.5v-3"/></g></symbol>
+<symbol id="ic-machine-learning" viewBox="0 0 24 24"><title>Machine Learning</title><g stroke="currentColor"><path d="M6.47 10.64L10.53 6.86M6.47 13.36L10.53 17.14M13.47 6.86L17.53 10.64M13.47 17.14L17.53 13.36"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g><g stroke="var(--icon-accent,#8270C4)"><circle cx="12" cy="5.5" r="2"/><circle cx="12" cy="18.5" r="2"/></g></symbol>
+<symbol id="ic-artificial-intelligence" viewBox="0 0 24 24"><title>Artificial Intelligence</title><g stroke="currentColor"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M12 8.5l1.2 2.3 2.3 1.2-2.3 1.2L12 15.5l-1.2-2.3L8.5 12l2.3-1.2z"/></g></symbol>
+<symbol id="ic-statistics" viewBox="0 0 24 24"><title>Statistics</title><g stroke="currentColor"><path d="M3 20h18"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M3 20c4.5 0 5-15 9-15s4.5 15 9 15"/></g></symbol>
+<symbol id="ic-data-visualization" viewBox="0 0 24 24"><title>Data Visualization</title><g stroke="currentColor"><path d="M3 3v18h18"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M7 15l4-5 3.5 3L20 6.5"/></g></symbol>
+<symbol id="ic-business-intelligence" viewBox="0 0 24 24"><title>Business Intelligence</title><g stroke="currentColor"><path d="M3 18a9 9 0 0 1 18 0"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M12 18l4-5"/><circle cx="12" cy="18" r="1.5"/></g></symbol>
+<symbol id="ic-python" viewBox="0 0 24 24"><title>Python</title><g stroke="currentColor"><path d="M16 8V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v3a2 2 0 0 0 2 2h6a2 2 0 0 1 2 2v1"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M16 8V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v3a2 2 0 0 0 2 2h6a2 2 0 0 1 2 2v1" transform="rotate(180 12 12)"/></g></symbol>
+<symbol id="ic-sql" viewBox="0 0 24 24"><title>SQL</title><g stroke="currentColor"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></g></symbol>
+<symbol id="ic-data-cleaning" viewBox="0 0 24 24"><title>Data Cleaning</title><g stroke="currentColor"><path d="M3 4h18l-7 8.5"/><path d="M10 12.5L3 4"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M10 12.5V21l4-2v-6.5"/></g></symbol>
+<symbol id="ic-predictive-modeling" viewBox="0 0 24 24"><title>Predictive Modeling</title><g stroke="currentColor"><path d="M3 3v18h18"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M6 16l7-4.5"/><path d="M13 11.5L19 8" stroke-dasharray="1 3"/></g></symbol>
+<symbol id="ic-research" viewBox="0 0 24 24"><title>Research</title><g stroke="currentColor"><path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M7.5 15h9"/></g></symbol>
+<symbol id="ic-problem-solving" viewBox="0 0 24 24"><title>Problem Solving</title><g stroke="currentColor"><path d="M9 15.5a6 6 0 1 1 6 0V17H9z"/><path d="M10 20h4"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M12 17v-4M10.5 11.5L12 13l1.5-1.5"/></g></symbol>
+</defs></svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#171622"/><path d="M10 22V10l12 12V10" fill="none" stroke="#B8A9E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="22" r="2.4" fill="#171622" stroke="#F7F5FC" stroke-width="1.75"/><circle cx="22" cy="10" r="2.4" fill="#171622" stroke="#F7F5FC" stroke-width="1.75"/></svg>Naufal Arkan Muhana</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience &amp; Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="hero">
+    <div class="hero-copy">
+    <p class="eyebrow"><svg class="ic " aria-hidden="true"><use href="#i-pin"/></svg>Aspiring data analyst, based in Tangerang</p>
+    <h1>Naufal Arkan Muhana</h1>
+    <p class="lede">Entrepreneurship graduate learning to answer <mark>business questions with data</mark>, using SQL, Python and Tableau.</p>
+    <div class="cta">
+      <a class="btn solid" href="#projects">View projects<svg class="ic " aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn ghost" href="#contact"><svg class="ic " aria-hidden="true"><use href="#i-mail"/></svg>Contact me</a>
+    </div>
+    </div>
+    <figure class="flowfig skillnet">
+      <svg viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans,system-ui,sans-serif" role="img" aria-label="Skills network with a photo of Naufal Arkan Muhana at the center, connected to six skill groups: Python, pandas and NumPy, statistics, visualization with Matplotlib and Tableau (learning), tools (Excel, Jupyter, GitHub) and SQL.">
+        <defs><clipPath id="av"><circle cx="280" cy="250" r="96"/></clipPath><clipPath id="card"><rect width="560" height="500" rx="14"/></clipPath></defs>
+        <g clip-path="url(#card)"><path d="M425 429L529 480M513 49L434 73M439 351L367 292M537 327L560 444M104 383L53 379M537 327L465 240M199 76L186 151M104 383L77 429M294 393L334 420M351 376L303 342M303 342L294 393M451 480L391 493M508 145L465 240M351 376L439 351M111 102L75 24M434 73L348 56M104 383L200 399M262 118L186 151M465 240L562 267M186 151L254 209M111 102L35 67M-5 14L35 67M451 480L425 429M209 504L200 399M43 167L52 216M513 49L556 2M537 327L439 351M560 444L529 480M152 466L200 399M165 304L200 399M305 288L367 292M173 240L52 216M537 327L562 267M348 56L399 20M7 232L-8 343M451 480L529 480M-9 443L53 379M-9 443L77 429M434 73L508 145M165 304L104 383M152 466L104 383M95 487L77 429M348 56L306 152M7 232L52 216M53 379L77 429M391 493L344 467M111 102L199 76M425 429L344 467M7 232L43 167M351 376L367 292M306 152L254 209M-8 343L53 379M513 49L399 20M-9 443L-8 343M152 466L209 504M351 376L334 420M111 102L186 151M508 145L562 267M95 487L104 383M434 73L556 2M351 376L294 393M-2 103L-5 14M75 24L-5 14M-2 103L35 67M75 24L35 67M344 467L334 420M451 480L560 444M152 466L95 487M465 240L367 292M305 288L254 209M95 487L209 504M305 288L303 342M391 493L425 429M508 145L556 2M425 429L439 351M294 393L200 399M165 304L173 240M173 240L254 209M303 342L367 292M186 151L173 240M513 49L508 145M-2 103L43 167M262 118L199 76M434 73L399 20M262 118L306 152" stroke="#DDD3F3" stroke-width="1.4" fill="none"/><circle cx="351" cy="376" r="3" fill="#CFC5F0" opacity=".8"/><circle cx="451" cy="480" r="10" fill="#CFC5F0" opacity=".8"/><circle cx="7" cy="232" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="537" cy="327" r="5" fill="#CFC5F0" opacity=".8"/><circle cx="513" cy="49" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="262" cy="118" r="5" fill="#CFC5F0" opacity=".8"/><circle cx="305" cy="288" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="-2" cy="103" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="152" cy="466" r="7" fill="#CFC5F0" opacity=".8"/><circle cx="434" cy="73" r="4" fill="#B8A9E8" opacity=".8"/><circle cx="348" cy="56" r="7" fill="#CFC5F0" opacity=".8"/><circle cx="-9" cy="443" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="111" cy="102" r="4" fill="#B8A9E8" opacity=".8"/><circle cx="560" cy="444" r="4" fill="#CFC5F0" opacity=".8"/><circle cx="303" cy="342" r="5" fill="#CFC5F0" opacity=".8"/><circle cx="391" cy="493" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="508" cy="145" r="3" fill="#B8A9E8" opacity=".8"/><circle cx="199" cy="76" r="7" fill="#CFC5F0" opacity=".8"/><circle cx="75" cy="24" r="10" fill="#B8A9E8" opacity=".8"/><circle cx="165" cy="304" r="10" fill="#B8A9E8" opacity=".8"/><circle cx="-8" cy="343" r="7" fill="#CFC5F0" opacity=".8"/><circle cx="186" cy="151" r="10" fill="#B8A9E8" opacity=".8"/><circle cx="465" cy="240" r="5" fill="#B8A9E8" opacity=".8"/><circle cx="173" cy="240" r="3" fill="#CFC5F0" opacity=".8"/><circle cx="399" cy="20" r="4" fill="#B8A9E8" opacity=".8"/><circle cx="556" cy="2" r="7" fill="#B8A9E8" opacity=".8"/><circle cx="425" cy="429" r="4" fill="#CFC5F0" opacity=".8"/><circle cx="-5" cy="14" r="4" fill="#B8A9E8" opacity=".8"/><circle cx="95" cy="487" r="3" fill="#CFC5F0" opacity=".8"/><circle cx="104" cy="383" r="4" fill="#CFC5F0" opacity=".8"/><circle cx="529" cy="480" r="3" fill="#CFC5F0" opacity=".8"/><circle cx="294" cy="393" r="3" fill="#CFC5F0" opacity=".8"/><circle cx="53" cy="379" r="4" fill="#CFC5F0" opacity=".8"/><circle cx="43" cy="167" r="4" fill="#B8A9E8" opacity=".8"/><circle cx="344" cy="467" r="3" fill="#CFC5F0" opacity=".8"/><circle cx="306" cy="152" r="7" fill="#CFC5F0" opacity=".8"/><circle cx="35" cy="67" r="7" fill="#B8A9E8" opacity=".8"/><circle cx="562" cy="267" r="10" fill="#CFC5F0" opacity=".8"/><circle cx="334" cy="420" r="10" fill="#CFC5F0" opacity=".8"/><circle cx="254" cy="209" r="4" fill="#B8A9E8" opacity=".8"/><circle cx="52" cy="216" r="5" fill="#CFC5F0" opacity=".8"/><circle cx="77" cy="429" r="5" fill="#CFC5F0" opacity=".8"/><circle cx="209" cy="504" r="5" fill="#CFC5F0" opacity=".8"/><circle cx="200" cy="399" r="3" fill="#B8A9E8" opacity=".8"/><circle cx="439" cy="351" r="10" fill="#CFC5F0" opacity=".8"/><circle cx="367" cy="292" r="3" fill="#B8A9E8" opacity=".8"/></g>
+        <path d="M337.2 158.4L345.2 145.7M387.4 261.3L452.1 268.1M330.7 345.4L342.4 367.4M229.3 345.4L203.5 393.9M172.1 246.2L102.1 243.8M219.6 160.5L197.2 127.3" stroke="#8270C4" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <circle cx="359" cy="123" r="27" fill="#FFFFFF" stroke="#171622" stroke-width="4"/><svg x="345" y="109" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-python"/></svg><circle cx="479" cy="271" r="27" fill="#FFFFFF" stroke="#171622" stroke-width="4"/><svg x="465" y="257" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-data-analysis"/></svg><circle cx="355" cy="391" r="27" fill="#FFFFFF" stroke="#171622" stroke-width="4"/><svg x="341" y="377" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-statistics"/></svg><circle cx="191" cy="418" r="27" fill="#FFFFFF" stroke="#171622" stroke-width="4"/><svg x="177" y="404" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-data-visualization"/></svg><circle cx="75" cy="243" r="27" fill="#FFFFFF" stroke="#171622" stroke-width="4"/><svg x="61" y="229" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#i-brief"/></svg><circle cx="182" cy="105" r="27" fill="#FFFFFF" stroke="#171622" stroke-width="4"/><svg x="168" y="91" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-sql"/></svg>
+        <circle cx="280" cy="250" r="108" fill="#FFFFFF" stroke="#B8A9E8" stroke-width="3"/>
+        <circle cx="280" cy="250" r="96" fill="#EEE9FA"/>
+        <image href="assets/naufal.jpg" x="184" y="154" width="192" height="192" preserveAspectRatio="xMidYMid slice" clip-path="url(#av)"/>
+        <circle cx="280" cy="250" r="96" fill="none" stroke="#171622" stroke-width="4"/>
+        <text x="359" y="70" font-size="17" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Python</text><text x="359" y="87" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Language</text><text x="479" y="320" font-size="17" font-weight="600" fill="#171622" text-anchor="middle" class="lt">pandas · NumPy</text><text x="479" y="337" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Data wrangling</text><text x="355" y="440" font-size="17" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Statistics</text><text x="355" y="457" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">SciPy · statsmodels</text><text x="191" y="467" font-size="17" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Visualization</text><text x="191" y="484" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Matplotlib · Tableau (learning)</text><text x="75" y="292" font-size="17" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Tools</text><text x="75" y="309" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Excel · Jupyter · GitHub</text><text x="182" y="52" font-size="17" font-weight="600" fill="#171622" text-anchor="middle" class="lt">SQL</text><text x="182" y="69" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">MySQL</text>
+      </svg>
+    </figure>
+  </div>
+
+  <section id="about" class="about">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-user"/></svg></span>About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+    <p>I graduated in Entrepreneurship from Universitas Brawijaya in 2026. During my degree I ran a small business and kept its records in spreadsheets.</p>
+    <p>That made me want to answer business questions with data instead of by feel. Since August 2026 I have been studying Data Science and Machine Learning at Purwadhika in BSD, working with MySQL, Python (NumPy, pandas), Jupyter Notebook, Tableau and statistics.</p>
+    <p>I am looking for a data analyst, business intelligence or reporting internship in Jakarta or Tangerang, where I can combine business understanding with analysis.</p>
+      </div>
+      <figure class="flowfig" aria-hidden="true">
+      <svg viewBox="0 10 440 310" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans,system-ui,sans-serif">
+        <g stroke="#B8A9E8" stroke-width="1.5" fill="none" opacity=".9">
+          <path d="M40 60L120 40L90 120L40 60M120 40L210 70L300 40L380 120L400 230M210 70L90 120M300 40L210 70M380 120L300 40M90 120L40 200L70 250M400 230L330 290M120 300L70 250M120 300L170 170M330 290L270 210"/>
+        </g>
+        <g fill="#F7F5FC" stroke="#B8A9E8" stroke-width="1.5">
+          <circle cx="40" cy="60" r="5"/><circle cx="120" cy="40" r="5"/><circle cx="90" cy="120" r="5"/><circle cx="210" cy="70" r="5"/><circle cx="300" cy="40" r="5"/><circle cx="380" cy="120" r="5"/><circle cx="400" cy="230" r="5"/><circle cx="330" cy="290" r="5"/><circle cx="120" cy="300" r="5"/><circle cx="40" cy="200" r="5"/>
+        </g>
+        <path d="M70 250L170 170L270 210L370 90" fill="none" stroke="#8270C4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g fill="#FFFFFF" stroke="#171622" stroke-width="2.2"><circle cx="70" cy="250" r="9"/><circle cx="170" cy="170" r="9"/><circle cx="270" cy="210" r="9"/></g>
+        <circle cx="370" cy="90" r="15" fill="#B8A9E8" stroke="#171622" stroke-width="2.2"/><circle cx="370" cy="90" r="4.5" fill="#171622"/>
+        <g font-size="12.5" fill="#5C566C" text-anchor="middle">
+          <text x="70" y="278">Raw data</text><text x="170" y="148">Clean</text><text x="268" y="240" text-anchor="end">Analysis</text><text x="370" y="62" fill="#171622" font-weight="600">Insight</text>
+        </g>
+      </svg>
+    </figure>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-brief"/></svg></span>Experience &amp; Education</h2><p>Newest first. Experience comes from running a business and student organizations, not from a formal job.</p></div>
+
+    <div class="group-title"><svg class="ic " aria-hidden="true"><use href="#i-brief"/></svg>Experience</div>
+    <div class="ledger">
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>Mar – Sep 2025</div>
+        <div>
+          <h3>Owner, Es SiGemoy</h3>
+          <div class="org">Dessert business (es teler and alpukat kocok), Cianjur · thesis requirement, Universitas Brawijaya</div>
+          <ul>
+            <li>Ran a B2C business from a rented kiosk and through online sales for 7 months: 4,386 cups sold and Rp48.5 million in revenue, about Rp10.1 million net profit after all costs including setup.</li>
+            <li>Kept daily sales, cost per cup, cash flow and income statements in Google Sheets.</li>
+            <li>Bought and set up cold storage to cut ingredient waste on zero-sales days and to hold stock of seasonal, price-volatile fruit.</li>
+            <li>Passed the Business Verification run by the Management Department, FEB Universitas Brawijaya (October 2025).</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>2023</div>
+        <div>
+          <h3>Inventory Staff and Athlete, UKM Tae Kwon-Do</h3>
+          <div class="org">Universitas Brawijaya (student organization)</div>
+          <ul>
+            <li>Managed training and tournament equipment as Staf Seksi Inventaris, recognized by a Rector's certificate.</li>
+            <li>Competed at the same time: two first-place finishes in M-Kyorugi at provincial level (Kejuaraan Provinsi Taekwondo Jawa Timur and Piala Pangdam V/Brawijaya, 2023).</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>During university</div>
+        <div>
+          <h3>Team Lead and Committee Member</h3>
+          <div class="org">Student business and event activities</div>
+          <ul>
+            <li>Led a team of four whose business plan received funding (AWMM).</li>
+            <li>Served on event committees in the field and logistics divisions.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="group-title"><svg class="ic " aria-hidden="true"><use href="#i-cap"/></svg>Education and training</div>
+    <div class="ledger">
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>Aug 2026 – present</div>
+        <div>
+          <h3>Data Science &amp; Machine Learning Bootcamp</h3>
+          <div class="org">Purwadhika Digital School, BSD</div>
+          <ul>
+            <li>Two of three modules completed. Tools used in coursework and projects: MySQL, Python, NumPy, pandas, Jupyter Notebook, Tableau, statistical testing.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>2022 – 2026</div>
+        <div>
+          <h3>S1 Entrepreneurship (Kewirausahaan)</h3>
+          <div class="org">Faculty of Economics and Business, Universitas Brawijaya · GPA 3.76 · graduated June 2026</div>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>Dec 2025</div>
+        <div>
+          <h3>Designing Products Users Love with Data (online course)</h3>
+          <div class="org">Skill Academy by Ruangguru · certificate of completion</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#ic-problem-solving"/></svg></span>Skills</h2><p>Skills I use in my projects and coursework.</p></div>
+    <div class="skills">
+      <div class="skill"><h3><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-python"/></svg></span>Programming Language</h3>
+        <ul class="tags"><li>SQL (MySQL)</li><li>Python</li></ul></div>
+      <div class="skill"><h3><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-data-analysis"/></svg></span>Analysis and statistics</h3>
+        <ul class="tags"><li>pandas</li><li>NumPy</li><li>SciPy</li><li>statsmodels</li><li>Statistical testing</li><li>Regression</li></ul></div>
+      <div class="skill"><h3><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-data-visualization"/></svg></span>Visualization</h3>
+        <ul class="tags"><li>Tableau (learning)</li><li>Matplotlib</li></ul></div>
+      <div class="skill"><h3><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#i-brief"/></svg></span>Tools</h3>
+        <ul class="tags"><li>Jupyter Notebook</li><li>Git and GitHub</li><li>Microsoft Excel</li><li>Google Sheets</li></ul></div>
+    </div>
+    <p class="skills-note">Machine learning is the next module in my bootcamp. I will add it here once a project shows it.</p>
+    <div class="flow-title">How my data work flows</div>
+    <ol class="flow">
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-sql"/></svg></span><b><i class="n">1</i>Store and filter</b><span>Keep raw tables in a database and pull only what the question needs.</span><em>MySQL</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-data-cleaning"/></svg></span><b><i class="n">2</i>Clean and explore</b><span>Flag problems, clean, and explore in notebooks.</span><em>Python · pandas · NumPy · Jupyter</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-statistics"/></svg></span><b><i class="n">3</i>Test</b><span>Check whether a difference is real before reporting it.</span><em>SciPy · statsmodels</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-data-visualization"/></svg></span><b><i class="n">4</i>Show</b><span>Turn the result into charts and dashboards for non-technical readers.</span><em>Matplotlib · Tableau (learning)</em></li>
+    </ol>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-folder"/></svg></span>Projects</h2><p>Each project lists the problem, what I did, the tools and the result.</p></div>
+    <div class="projects">
+
+      <article class="proj">
+        <div>
+          <div class="thumb"><img src="assets/projects/bluebird.jpg" alt="A blue Bluebird taxi driving through a busy city street" width="900" height="600" loading="lazy"></div><h3>Blue Bird Taxi: Demand and Fleet Insights</h3>
+          <ul class="tags"><li>MySQL</li><li>Python</li><li>pandas</li><li>SciPy</li><li>statsmodels</li><li>Matplotlib</li></ul>
+          <div class="links">
+            <a class="btn solid small" href="https://github.com/naufalarkan2004-spec/bluebird-taxi-demand-fleet-insights-analysis" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>View code on GitHub</a>
+          </div>
+        </div>
+        <dl>
+          <div><dt>Context</dt><dd>Blue Bird runs a traditional taxi fleet with permanent drivers, so idle cars and drivers cost money without earning. Corporate clients also questioned how eVoucher trips were used. The question: why do many drivers sit idle while some customers cannot get a taxi?</dd></div>
+          <div><dt>My role and approach</dt><dd>Capstone for Module 2, done in a pair, with every part worked on together. Analyzed six MySQL tables (October to December 2023, about 290,000 service requests and 250,000 driver shifts). Flagged data problems in separate columns instead of overwriting the originals. Tested differences with Kruskal-Wallis, Mann-Whitney, chi-square, z-tests, OLS, Poisson and logistic regression, with Bonferroni correction.</dd></div>
+          <div><dt>Results</dt><dd><ul>
+            <li>In the CBD at 07:00–08:59 and 17:00–18:59, 36.6% of requests failed, against 5.5% at other hours in the same zone. Those four hours are 14.3% of requests but 45.6% of failures.</li>
+            <li>30.6% of driver shifts had zero trips. At the Airport, 51% of shifts had none, against 19% in the CBD.</li>
+            <li>65.9% of Airport eVoucher trips happened at night or on weekends, against 22.6% for other trips. This is a pattern to verify, not proof of misuse.</li>
+            <li>Seven recommendations, each tied to a baseline KPI. Findings are associations from three months of data.</li>
+          </ul></dd></div>
+        </dl>
+      </article>
+
+      <article class="proj pending" id="dashboard-card">
+        <div>
+          <span class="badge" id="dash-badge">In progress</span>
+          <div class="thumb"><img src="assets/projects/churn.jpg" alt="A laptop showing a customer churn analytics dashboard" width="900" height="600" loading="lazy"></div><h3>E-Commerce Customer Churn Dashboard</h3>
+          <ul class="tags"><li id="dash-tool">Tableau</li></ul>
+          <div class="links">
+            <a class="btn solid small" id="dash-link" href="#" target="_blank" rel="noopener" hidden>View dashboard</a>
+            <a class="btn ghost small" id="dash-video" href="#" target="_blank" rel="noopener" hidden>Watch business goal video</a>
+          </div>
+        </div>
+        <dl>
+          <div><dt>Context</dt><dd>An interactive dashboard that helps an e-commerce team see which customers are likely to leave and what separates them from customers who stay.</dd></div>
+          <div id="dash-pending-note" class="pending-note">Being built for the Purwadhika Portfolio Building assignment. The link and a short video explaining the business goal will be added here when it is published.</div>
+        </dl>
+      </article>
+
+            <article class="proj">
+        <div>
+          <div class="thumb"><img src="assets/projects/employee.jpg" alt="An HR professional reviewing employee records on a computer" width="900" height="600" loading="lazy"></div><h3>Employee Data Management System</h3>
+          <ul class="tags"><li>Python</li><li>Data validation</li></ul>
+          <div class="links">
+            <a class="btn solid small" href="https://github.com/naufalarkan2004-spec/Employee_Data_Management_System_Program_Python" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>View code on GitHub</a>
+          </div>
+        </div>
+        <dl>
+          <div><dt>Context</dt><dd>HR staff need employee records that stay consistent and recoverable. This is the Purwadhika Capstone 1 project: a console application for managing employee data.</dd></div>
+          <div><dt>My role and approach</dt><dd>Built the program in Python with create, read, update and delete functions. It validates dates, emails, phone and bank numbers, salary and duplicate national IDs, and asks for confirmation before saving.</dd></div>
+          <div><dt>Results</dt><dd><ul>
+            <li>Employee IDs are generated per department, for example FIN001 and IT004.</li>
+            <li>Deleted records go to a recycle bin and can be restored, and every update is logged with old and new values.</li>
+            <li>A statistics view reports headcount, salary totals and averages, and tenure. Data is held in memory, so it resets when the program closes.</li>
+          </ul></dd></div>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-mail"/></svg></span>Contact</h2></div>
+    <p class="lead">I am open to data analyst, business intelligence and reporting internships in Jakarta and Tangerang, on site or remote. The quickest way to reach me is LinkedIn.</p>
+    <div class="cta">
+      <a class="btn solid" href="https://www.linkedin.com/in/naufal-arkan-muhana-81b800220" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/naufalarkan2004-spec" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
+      <a class="btn ghost" id="cv-link" href="#" target="_blank" rel="noopener" hidden>Download CV</a>
+    </div>
+    <p class="mail" id="mail-line" hidden>Email: <b id="mail-addr"></b></p>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© 2026 Naufal Arkan Muhana</div></footer>
+
+<script>
+/* Fill these in when ready. Anything left empty stays hidden, so no dead links show. */
+var CONFIG = {
+  email: "",          // e.g. "name@gmail.com"
+  cvUrl: "",          // e.g. "assets/Naufal-Arkan-Muhana-CV.pdf"
+  dashboardUrl: "",   // public Tableau / Looker Studio link
+  dashboardVideoUrl: "",
+  dashboardTool: "Tableau"   // or "Looker Studio"
+};
+(function(){
+  try{
+    var links=[].slice.call(document.querySelectorAll("nav a"));
+    var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.remove("on")});var a=map[e.target.id];if(a)a.classList.add("on")}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }catch(e){}
+})();
+(function () {
+  function $(id) { return document.getElementById(id); }
+  if (CONFIG.email) { $("mail-addr").textContent = CONFIG.email; $("mail-line").hidden = false; }
+  if (CONFIG.cvUrl) { $("cv-link").href = CONFIG.cvUrl; $("cv-link").hidden = false; }
+  $("dash-tool").textContent = CONFIG.dashboardTool;
+  if (CONFIG.dashboardUrl) {
+    $("dash-link").href = CONFIG.dashboardUrl; $("dash-link").hidden = false;
+    $("dash-badge").hidden = true;
+    $("dash-pending-note").hidden = true;
+    $("dashboard-card").classList.remove("pending");
+  }
+  if (CONFIG.dashboardVideoUrl) { $("dash-video").href = CONFIG.dashboardVideoUrl; $("dash-video").hidden = false; }
+})();
+</script>
+</body>
+</html>
