@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naufal Arkan Muhana | Data Analyst Portfolio</title>
+<meta name="theme-color" content="#F7F5FC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='24' height='24' rx='6' fill='%23171622'/%3E%3Cpath d='M7 17V7l10 10V7' stroke='%23B8A9E8'/%3E%3Ccircle cx='7' cy='17' r='1.6' fill='%23171622' stroke='%23F7F5FC'/%3E%3Ccircle cx='17' cy='7' r='1.6' fill='%23171622' stroke='%23F7F5FC'/%3E%3C/svg%3E">
+<meta name="description" content="Naufal Arkan Muhana, Data Analyst. Business analytics, SQL, Python, statistical analysis and Tableau data visualization projects that turn business data into decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Digital Lavender system. Palette: Digital Lavender #B8A9E8 (signature accent), Deep Lavender #8270C4 (graphics),
+   Midnight Charcoal #171622 (text, dark band), Lavender White #F7F5FC (page), Neutral Gray #8B8796 (decoration only).
+   Supporting: Ink Lavender #5B49A3 for small accent text, Muted #5C566C for body text (both pass contrast). Fonts: 2. */
+:root{
+  --bg:#F7F5FC; --card:#FFFFFF; --fg:#171622; --muted:#5C566C; --line:#E2DCF2; --soft:#EEE9FA;
+  --lav:#B8A9E8; --deep:#8270C4; --ink:#5B49A3; --charcoal:#171622; --gray:#8B8796;
+  --icon-accent:#8270C4;
+  --display:"Sora","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;overflow-x:clip;background:var(--bg);color:var(--fg);font:400 1rem/1.65 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance;overflow-wrap:break-word}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+mark{background:linear-gradient(transparent 62%,rgba(184,169,232,.55) 62%);color:inherit}
+.ic{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em}
+.chip-ic{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--fg);flex:none}
+.chip-ic .ic{width:22px;height:22px;vertical-align:0}
+.chip-ic.sm{width:32px;height:32px;border-radius:10px}.chip-ic.sm .ic{width:20px;height:20px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(247,245,252,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+  margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top .wrap{display:flex;align-items:center;gap:6px 28px;padding-block:10px;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;text-decoration:none;font-size:1rem;color:var(--fg)}
+.mark{width:32px;height:32px;flex:none}
+nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;max-width:100%}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem;white-space:nowrap;padding:6px 12px;border-radius:999px}
+nav a:hover,nav a.on{background:var(--soft);color:var(--fg)}
+@media (max-width:640px){nav{margin-left:0;width:100%}}
+.hero .cta{gap:8px}.hero .cta .btn{padding:10px 16px;font-size:.95rem}
+/* motion: only when the visitor has not asked for reduced motion */
+@media (prefers-reduced-motion:no-preference){
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes dotpulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @keyframes portrait{0%{opacity:0;transform:scale(.8);filter:blur(10px) saturate(.4)}60%{opacity:1;filter:blur(2px) saturate(.8)}100%{opacity:1;transform:none;filter:none}}
+  @keyframes ringin{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+  .hero .skillnet image{transform-box:fill-box;transform-origin:center;animation:portrait 1.4s .6s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy > *{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy > *:nth-child(2){animation-delay:.08s}.hero-copy > *:nth-child(3){animation-delay:.16s}
+  .hero-copy > *:nth-child(4){animation-delay:.24s}.hero-copy > *:nth-child(5){animation-delay:.32s}
+  .hero .skillnet{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both,drift 7s 1.2s ease-in-out infinite}
+  .hero .skillnet svg circle[fill]:not([fill="none"]){animation:dotpulse 4s ease-in-out infinite}
+  .hero .skillnet svg circle:nth-of-type(3n){animation-delay:-1.3s}.hero .skillnet svg circle:nth-of-type(3n+1){animation-delay:-2.6s}
+  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+  .js .rv.in{opacity:1;transform:none}
+  .row,.proj,.skills > *,.flow li,.flowfig,.btn,nav a{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease}
+  .row:hover,.proj:hover,.skills > *:hover,.flow li:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(130,112,196,.16);border-color:var(--lav)}
+  .btn:hover{transform:translateY(-2px)}
+  .js .rv.in:hover{transform:translateY(-3px)}
+}
+.hello{margin:0 0 14px;font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--muted);font-weight:500}
+.hello b{font-family:var(--display);font-weight:700;color:var(--fg);letter-spacing:-.01em}
+.hello::after{content:"";display:block;width:44px;height:3px;border-radius:3px;background:var(--lav);margin-top:12px}
+.skills-group{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:1.05rem;margin:0 0 14px}
+.skills-group:not(:first-of-type){margin-top:30px}
+.skills.soft{grid-template-columns:1fr}
+.skillbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px;display:grid;gap:24px}
+.sk-label{font-family:var(--display);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+.sk-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.sk-chips li{padding:7px 14px;border:1px solid var(--line);background:var(--soft);border-radius:999px;font-size:.92rem;font-weight:500;color:var(--fg);transition:border-color .2s,background-color .2s}
+.sk-chips li:hover{border-color:var(--lav);background:var(--card)}
+.sk-row + .sk-row{border-top:1px solid var(--line);padding-top:22px}
+#skills .flow{grid-template-columns:repeat(5,minmax(0,1fr))}
+.flow-sub{color:var(--muted);margin:-6px 0 14px;font-size:.95rem}
+@media (max-width:1320px){#skills .flow{grid-template-columns:repeat(3,minmax(0,1fr))}#skills .flow li + li::before{display:none}}
+@media (max-width:760px){#skills .flow{grid-template-columns:1fr}}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card);gap:2px;flex:none}
+.lang button{font:inherit;font-size:.82rem;font-weight:600;letter-spacing:.04em;border:0;background:transparent;color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--lav);color:var(--charcoal)}
+.lang button:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+@media (max-width:1099px){.lang{margin-left:auto}}
+/* light / dark theme */
+:root{--top-bg:rgba(247,245,252,.92);--band:#171622;--pending-bg:rgba(255,255,255,.6)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12111B; --card:#1B1928; --fg:#F1EEFA; --muted:#B4AEC6; --line:#2E2B42; --soft:#25223A; --ink:#C9BEF4; --deep:#9C8CE0; --icon-accent:#B8A9E8; --top-bg:rgba(18,17,27,.92); --band:#0B0A12; --pending-bg:rgba(27,25,40,.7); color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#12111B; --card:#1B1928; --fg:#F1EEFA; --muted:#B4AEC6; --line:#2E2B42; --soft:#25223A; --ink:#C9BEF4; --deep:#9C8CE0; --icon-accent:#B8A9E8; --top-bg:rgba(18,17,27,.92); --band:#0B0A12; --pending-bg:rgba(27,25,40,.7); color-scheme:dark;}
+.top{background:var(--top-bg)}
+.contact::after,footer::after{background:var(--band)}
+#projects .proj.pending{background:var(--pending-bg)}
+.brand .mark{border-radius:9px;box-shadow:0 0 0 1px var(--line)}
+/* illustrations keep a light panel so their drawn labels stay readable */
+:root[data-theme="dark"] .flowfig{background:#F7F5FC;border-color:transparent}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flowfig{background:#F7F5FC;border-color:transparent}}
+.theme-btn{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;padding:0;flex:none}
+.theme-btn:hover{border-color:var(--lav)}
+.theme-btn:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+.theme-btn svg{width:18px;height:18px}
+.theme-btn .moon{display:none}
+:root[data-theme="dark"] .theme-btn .sun{display:none}:root[data-theme="dark"] .theme-btn .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-btn .sun{display:none}:root:not([data-theme="light"]) .theme-btn .moon{display:block}}
+.prefs{display:flex;align-items:center;gap:8px;flex:none}
+@media (max-width:1099px){.prefs{margin-left:auto}.prefs .lang{margin-left:0}}
+#skills .flow li{position:relative}
+#skills .flow li > .chip-ic{display:inline-grid;place-items:center;width:40px;height:40px;margin-bottom:14px}
+#skills .flow li > .chip-ic .ic{width:22px;height:22px}
+#skills .flow b{display:block;padding-right:0}
+#skills .flow b .n{position:absolute;top:22px;right:18px;margin:0;width:26px;height:26px;font-size:.8rem}
+.about .flowline{stroke-dasharray:6 7}
+@media (prefers-reduced-motion:no-preference){@keyframes flowdash{to{stroke-dashoffset:-26}}.about .flowline{animation:flowdash 1.6s linear infinite}}
+/* rotating professional title */
+.rot-h1{max-width:none}
+.rot-lead{display:block;font-size:clamp(1.15rem,2.2vw,1.6rem);font-weight:600;color:var(--muted);letter-spacing:0;margin-bottom:.15em}
+.hero-copy{container-type:inline-size}
+.rot{display:grid;color:var(--fg);font-size:1.6rem;font-size:clamp(1.25rem,5.9cqi,3.1rem);white-space:nowrap;line-height:1.2}
+.rot > span{grid-area:1/1;opacity:0;transform:translateY(.45em);background:linear-gradient(90deg,var(--ink),var(--deep));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em;text-wrap:balance}
+.rot > span:first-child{opacity:1;transform:none}
+.hero .lede .hook{display:block;color:var(--fg);font-weight:600;margin-bottom:6px}
+@media (prefers-reduced-motion:no-preference){
+  @keyframes rot{0%{opacity:0;transform:translateY(.45em)}4%,30%{opacity:1;transform:none}34%,100%{opacity:0;transform:translateY(-.45em)}}
+  .rot > span{animation:rot 9s cubic-bezier(.2,.7,.2,1) infinite both}
+  .rot > span:nth-child(2){animation-delay:3s}.rot > span:nth-child(3){animation-delay:6s}
+}
+/* vertical side navigation on wide screens */
+@media (min-width:1100px){
+  .contact::after,footer::after{left:-100vw;right:-100vw;width:auto;transform:none}
+  body{padding-left:calc(220px + 16px)}
+  .top{position:fixed;top:0;left:0;bottom:0;width:220px;margin:0;padding:28px 18px;border-bottom:0;border-right:1px solid var(--line);background:var(--bg);backdrop-filter:none;overflow-y:auto}
+  .top .wrap{flex-direction:column;align-items:flex-start;flex-wrap:nowrap;gap:28px;padding-block:0;max-width:none;margin:0}
+  nav{flex-direction:column;gap:2px;margin:0;width:100%;overflow:visible}
+  nav a{display:block;white-space:normal;border-radius:10px;padding:9px 12px;border-left:3px solid transparent}
+  nav a.on{border-left-color:var(--deep);border-radius:4px 10px 10px 4px}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-weight:600;text-decoration:none;border:2px solid var(--lav);font-size:1rem;line-height:1.2;border-radius:999px}
+.btn .ic{width:1.1em;height:1.1em;vertical-align:0}
+.btn.solid{background:var(--lav);color:var(--charcoal)}
+.btn.solid:hover{background:#A394DE;border-color:#A394DE}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--deep)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.small{padding:8px 16px;font-size:.92rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px 40px;align-items:center;padding-block:56px 36px}
+.hero::before{content:"";position:absolute;inset:0 -40px;z-index:-1;pointer-events:none;
+  background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;
+  opacity:.55;-webkit-mask-image:radial-gradient(ellipse 70% 75% at 70% 40%,#000,transparent 75%);mask-image:radial-gradient(ellipse 70% 75% at 70% 40%,#000,transparent 75%)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;font-size:.95rem;margin-bottom:18px;background:var(--card);border:1px solid var(--line);padding:6px 14px 6px 10px;border-radius:999px}
+h1{font-size:clamp(2.1rem,5.4vw,3.5rem);font-weight:700;max-width:14ch;letter-spacing:-.015em}
+.lede{font-size:clamp(1.1rem,2.2vw,1.3rem);color:var(--muted);max-width:40ch;margin-top:22px;line-height:1.5}
+.flowfig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:0 1px 3px rgba(23,22,34,.05)}
+.flowfig > svg{display:block;width:100%;height:auto}
+.strip{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 20px;margin-top:8px}
+@media (max-width:760px){.strip{grid-template-columns:1fr}}
+.strip > div{padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.sti{width:24px;height:24px;margin-bottom:10px;display:block}
+.num{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.05;font-variant-numeric:tabular-nums;color:var(--fg)}
+.lbl{color:var(--muted);font-size:.92rem;margin-top:8px;line-height:1.4}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:44px}}
+
+/* sections with node-and-line divider */
+section{padding-block:0 56px}
+section::before{content:"";display:block;height:9px;margin-bottom:52px;
+  background:radial-gradient(circle at 4.5px 4.5px,var(--lav) 0 3.5px,var(--deep) 3.5px 4.5px,transparent 5px) 0 0/9px 9px no-repeat,linear-gradient(var(--line),var(--line)) 14px 4px/calc(100% - 14px) 1px no-repeat}
+.sec-head{display:grid;grid-template-columns:280px 1fr;gap:12px 32px;margin-bottom:28px;align-items:center}
+.sec-head h2{display:flex;align-items:center;gap:12px;font-size:clamp(1.5rem,3vw,2rem);font-weight:700}
+.sec-head p{color:var(--muted);max-width:56ch}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+.about p{max-width:62ch;font-size:1.1rem}.about p + p{margin-top:14px}
+
+/* experience */
+.group-title{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink);margin:30px 0 12px}
+.group-title .ic{color:var(--deep)}
+.row{display:grid;grid-template-columns:220px 1fr;gap:6px 32px;padding:20px 24px;margin-bottom:12px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+.when{display:flex;align-items:center;gap:8px;align-self:start;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;font-size:.98rem}
+.when .ic{width:1em;height:1em;color:var(--deep);vertical-align:0}
+.row h3{font-size:1.1rem;margin-bottom:4px;font-weight:600}
+.org{color:var(--muted);margin-bottom:10px}
+.row ul{margin:0;padding-left:1.1em;max-width:66ch}.row li + li{margin-top:6px}.row li::marker{color:var(--deep)}
+@media (max-width:760px){.row{grid-template-columns:1fr;padding:18px}}
+
+/* tags */
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{background:var(--soft);color:var(--ink);padding:3px 12px;border-radius:999px;font-size:.9rem;font-weight:500}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.skill h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:14px;font-weight:600}
+.skills-note{color:var(--muted);font-size:.95rem;margin-top:18px;max-width:64ch}
+@media (max-width:760px){.skills{grid-template-columns:1fr}}
+
+/* workflow */
+.flow-title{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink);margin:36px 0 14px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none;padding:0;margin:0;counter-reset:f}
+.flow li{position:relative;padding:18px 18px 16px;border:1px solid var(--line);background:var(--card);border-radius:16px}
+.flow li + li::before{content:"";position:absolute;left:-15px;top:34px;width:16px;height:1px;background:var(--deep)}
+.flow li .chip-ic{margin-bottom:12px}
+.flow b{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:.92rem;font-weight:600;margin-bottom:6px}
+.flow .n{font-style:normal;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--charcoal);color:var(--lav);font-size:.75rem}
+.flow span{display:block;font-size:.95rem;line-height:1.4;color:var(--muted)}
+.flow em{display:block;font-style:normal;color:var(--ink);font-size:.88rem;font-weight:500;margin-top:8px}
+@media (max-width:900px){.flow{grid-template-columns:1fr}.flow li + li::before{display:none}}
+
+/* projects */
+.projects{display:grid;gap:24px}
+.proj{padding:26px;background:var(--card);border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:22px 44px}
+.proj.pending{border-style:dashed;border-color:var(--deep);background:rgba(255,255,255,.6)}
+.thumb{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px;background:var(--soft)}
+.thumb svg{display:block;width:100%;height:auto}
+.thumb{position:relative;isolation:isolate}
+.thumb img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;filter:grayscale(.7) sepia(.25) hue-rotate(215deg) saturate(.9) contrast(1.05) brightness(.97);transform:scale(1.01);transition:filter .5s ease,transform .6s ease}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#B8A9E8 0%,#8270C4 100%);mix-blend-mode:soft-light;opacity:.85;pointer-events:none;transition:opacity .5s ease}
+.thumb:hover img,.thumb:focus-within img{filter:none;transform:scale(1.04)}
+.thumb:hover::after,.thumb:focus-within::after{opacity:0}
+@media (hover:none){.thumb img{filter:grayscale(.2) sepia(.1) hue-rotate(215deg) saturate(1)}.thumb::after{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.thumb img,.thumb::after{transition:none}.thumb:hover img{transform:none}}
+.proj h3{font-size:1.3rem;margin-bottom:10px;font-weight:700;line-height:1.25}
+.proj .badge{position:absolute;z-index:2;margin:12px 0 0 12px;box-shadow:0 2px 8px rgba(23,22,34,.15)}
+.proj > div{position:relative}
+.badge{display:inline-block;font-size:.85rem;font-weight:600;padding:3px 12px;background:var(--lav);color:var(--charcoal);margin-bottom:10px;border-radius:999px}
+.proj .tags{margin:14px 0 20px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.proj dl{margin:0;display:grid;gap:16px;align-content:start}
+.proj dt{font-weight:600;font-size:.88rem;color:var(--ink);margin-bottom:3px;letter-spacing:.02em}
+.proj dd{margin:0;max-width:62ch}.proj dd ul{margin:0;padding-left:1.1em}.proj dd li + li{margin-top:6px}.proj dd li::marker{color:var(--deep)}
+.proj .pending-note{color:var(--muted);font-size:.97rem;border-top:1px dashed var(--line);padding-top:12px}
+@media (max-width:860px){.proj{grid-template-columns:1fr;padding:20px}}
+.projects{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:stretch}
+.proj{grid-template-columns:1fr;padding:20px;gap:0}
+.proj > div{display:flex;flex-direction:column;height:100%;min-width:0}
+.proj .desc{color:var(--muted);margin:0;line-height:1.55}
+.proj .desc #dash-pending-note{display:block;margin-top:8px;font-size:.92rem;color:var(--ink)}
+.proj .tags{margin:14px 0 18px}.proj .links{margin-top:auto}
+
+
+/* data snapshot */
+.snap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.chart{border:1px solid var(--line);background:var(--card);padding:22px 22px 18px;border-radius:20px}
+.chart h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:8px;font-weight:700}
+.chart .sub{color:var(--muted);font-size:.9rem;margin-bottom:16px;line-height:1.4}
+.bars{display:grid;gap:14px}
+.bar .name{display:flex;justify-content:space-between;gap:10px;font-size:.92rem;margin-bottom:5px}
+.bar .val{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.track{display:block;height:10px;background:#E6E0F5;position:relative;border-radius:999px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--deep);border-radius:999px}
+.bar.hot .track i{background:var(--ink)}
+.axis{display:flex;justify-content:space-between;color:var(--muted);font-size:.78rem;margin-top:8px;font-variant-numeric:tabular-nums}
+.snap-note{color:var(--muted);font-size:.92rem;margin-top:18px;max-width:70ch}
+@media (max-width:900px){.snap{grid-template-columns:1fr}}
+
+/* contact + footer: Midnight Charcoal band */
+.contact,footer{position:relative;color:#F7F5FC}
+.contact::after,footer::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--charcoal);z-index:-1}
+.contact{--icon-accent:#B8A9E8;margin-top:24px;padding-block:56px}
+.contact::before{display:none}
+.contact .sec-head p{color:#B9B4C8}
+.contact .chip-ic{background:rgba(184,169,232,.16);color:#F7F5FC}
+.contact p.lead{max-width:52ch;font-size:1.1rem;margin-bottom:24px;color:#E6E2F2}
+.cform{margin-top:40px;max-width:760px}
+.cform-title{font-family:var(--display);font-size:1.15rem;font-weight:600;margin:0 0 16px;color:#F7F5FC}
+.cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}.fld.wide{grid-column:1/-1}
+.fld label{font-size:.88rem;font-weight:500;color:#D9D4EA}.fld label span{color:#9B96AD;font-weight:400}
+.fld input,.fld textarea{font:inherit;color:#F7F5FC;background:#232137;border:1px solid #3B3857;border-radius:12px;padding:12px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
+.fld textarea{resize:vertical;min-height:140px}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--lav);box-shadow:0 0 0 3px rgba(184,169,232,.25)}
+.fld .bad{border-color:#F2A0A0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cform-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px}
+.cform-actions .btn{cursor:pointer;font-family:inherit}.cform-actions .btn[disabled]{opacity:.6;cursor:wait}
+#cf-status{margin:0;font-size:.95rem;color:#D9D4EA}#cf-status.ok{color:#9FE3B5}#cf-status.err{color:#F2A0A0}
+.infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:40px;max-width:760px}
+.info{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px;background:#232137;border:1px solid #3B3857;border-radius:14px;min-width:0;overflow-wrap:break-word}
+.info .ic{width:20px;height:20px;color:var(--lav);margin-bottom:6px}.info b{font-family:var(--display);font-weight:600}
+.info span,.info a{color:#D9D4EA;font-size:.95rem}.info a:hover{color:#fff}
+@media (max-width:640px){.cgrid{grid-template-columns:1fr}}
+.contact .btn.ghost{color:var(--lav);border-color:var(--lav)}.contact .btn.ghost:hover{background:rgba(184,169,232,.14)}
+.mail{margin-top:20px;color:#B9B4C8}.mail b{color:#F7F5FC;user-select:all}
+footer{padding-block:0 36px;color:#B9B4C8;font-size:.92rem}
+footer .wrap{border-top:1px solid #2E2C40;padding-top:20px}
+.totop{display:inline-flex;align-items:center;gap:8px;color:#F7F5FC;text-decoration:none;font-weight:500;padding:8px 16px;border:1px solid #3B3857;border-radius:999px;transition:background-color .2s,border-color .2s,transform .2s}
+.totop:hover,.totop:focus-visible{background:#2E2C40;border-color:var(--lav);transform:translateY(-2px)}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* about: text + data-flow diagram */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px 48px;align-items:center}
+.about-text p{max-width:62ch}
+.skillnet{padding:10px}.skillnet > svg{width:100%;height:auto}.skillnet .lt{paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+<symbol id="i-gh" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="ic-data-analysis" viewBox="0 0 24 24"><title>Data Analysis</title><g stroke="currentColor"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M7.5 12.5v-2M10 12.5v-5M12.5 12.5v-3"/></g></symbol>
+<symbol id="ic-machine-learning" viewBox="0 0 24 24"><title>Machine Learning</title><g stroke="currentColor"><path d="M6.47 10.64L10.53 6.86M6.47 13.36L10.53 17.14M13.47 6.86L17.53 10.64M13.47 17.14L17.53 13.36"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g><g stroke="var(--icon-accent,#8270C4)"><circle cx="12" cy="5.5" r="2"/><circle cx="12" cy="18.5" r="2"/></g></symbol>
+<symbol id="ic-artificial-intelligence" viewBox="0 0 24 24"><title>Artificial Intelligence</title><g stroke="currentColor"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M12 8.5l1.2 2.3 2.3 1.2-2.3 1.2L12 15.5l-1.2-2.3L8.5 12l2.3-1.2z"/></g></symbol>
+<symbol id="ic-statistics" viewBox="0 0 24 24"><title>Statistics</title><g stroke="currentColor"><path d="M3 20h18"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M3 20c4.5 0 5-15 9-15s4.5 15 9 15"/></g></symbol>
+<symbol id="ic-data-visualization" viewBox="0 0 24 24"><title>Data Visualization</title><g stroke="currentColor"><path d="M3 3v18h18"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M7 15l4-5 3.5 3L20 6.5"/></g></symbol>
+<symbol id="ic-business-intelligence" viewBox="0 0 24 24"><title>Business Intelligence</title><g stroke="currentColor"><path d="M3 18a9 9 0 0 1 18 0"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M12 18l4-5"/><circle cx="12" cy="18" r="1.5"/></g></symbol>
+<symbol id="ic-python" viewBox="0 0 24 24"><title>Python</title><g stroke="currentColor"><path d="M16 8V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v3a2 2 0 0 0 2 2h6a2 2 0 0 1 2 2v1"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M16 8V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v3a2 2 0 0 0 2 2h6a2 2 0 0 1 2 2v1" transform="rotate(180 12 12)"/></g></symbol>
+<symbol id="ic-sql" viewBox="0 0 24 24"><title>SQL</title><g stroke="currentColor"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></g></symbol>
+<symbol id="ic-data-cleaning" viewBox="0 0 24 24"><title>Data Cleaning</title><g stroke="currentColor"><path d="M3 4h18l-7 8.5"/><path d="M10 12.5L3 4"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M10 12.5V21l4-2v-6.5"/></g></symbol>
+<symbol id="ic-predictive-modeling" viewBox="0 0 24 24"><title>Predictive Modeling</title><g stroke="currentColor"><path d="M3 3v18h18"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M6 16l7-4.5"/><path d="M13 11.5L19 8" stroke-dasharray="1 3"/></g></symbol>
+<symbol id="ic-research" viewBox="0 0 24 24"><title>Research</title><g stroke="currentColor"><path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M7.5 15h9"/></g></symbol>
+<symbol id="ic-problem-solving" viewBox="0 0 24 24"><title>Problem Solving</title><g stroke="currentColor"><path d="M9 15.5a6 6 0 1 1 6 0V17H9z"/><path d="M10 20h4"/></g><g stroke="var(--icon-accent,#8270C4)"><path d="M12 17v-4M10.5 11.5L12 13l1.5-1.5"/></g></symbol>
+</defs></svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#171622"/><path d="M10 22V10l12 12V10" fill="none" stroke="#B8A9E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="22" r="2.4" fill="#171622" stroke="#F7F5FC" stroke-width="1.75"/><circle cx="22" cy="10" r="2.4" fill="#171622" stroke="#F7F5FC" stroke-width="1.75"/></svg>Naufal Arkan Muhana</a>
+    <div class="prefs"><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="id" aria-pressed="false">ID</button></div><button type="button" class="theme-btn" id="theme-btn" aria-label="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience &amp; Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="hero">
+    <div class="hero-copy">
+    <p class="hello">Hi, I&rsquo;m <b>Naufal Arkan Muhana</b></p>
+    <h1 class="rot-h1" aria-label="I am a Data Analyst, Data Scientist and Business Intelligence Analyst"><span class="rot-lead" aria-hidden="true">I am a</span><span class="rot" aria-hidden="true"><span>Data Analyst</span><span>Data Scientist</span><span>Business Intelligence Analyst</span></span></h1>
+    <p class="lede"><strong class="hook">Turning business data into decisions.</strong> I combine business understanding with SQL, Python, statistical analysis and data visualization to find what drives a business problem and turn it into insights a team can act on.</p>
+    <div class="cta">
+      <a class="btn solid" href="#projects">Explore my projects<svg class="ic " aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn ghost" href="#contact"><svg class="ic " aria-hidden="true"><use href="#i-mail"/></svg>Contact me</a>
+      <a class="btn ghost" id="hero-cv" href="#" target="_blank" rel="noopener" hidden><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>Download CV</a>
+    </div>
+    </div>
+    <figure class="flowfig skillnet">
+      <svg viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans,system-ui,sans-serif" role="img" aria-label="Skills network with a photo of Naufal Arkan Muhana at the center, connected to six skill areas: SQL, Python, machine learning, statistics, data visualization and tools.">
+        <defs><clipPath id="av"><circle cx="280" cy="250" r="94"/></clipPath><clipPath id="card"><rect width="560" height="500" rx="14"/></clipPath></defs>
+        <g clip-path="url(#card)"><path d="M236 420L169 414M556 14L471 74M451 353L433 288M13 337L87 391M477 481L497 405M49 179L6 135M62 106L49 179M125 242L136 171M95 292L140 350M13 337L5 445M354 483L477 481M451 353L497 405M31 37L87 51M62 106L87 51M5 445L87 391M488 141L413 140M368 28L308 23M87 391L140 350M24 254L95 292M488 141L471 74M477 481L533 504M178 68L196 5M308 23L196 5M136 171L189 128M178 68L189 128M24 254L49 179M354 483L295 445M368 28L471 74M433 288L477 239M31 37L62 106M543 349L497 405M236 420L295 445M451 353L543 349M545 223L477 239M497 405L533 504M413 140L471 74M62 106L6 135M95 292L125 242M169 414L87 391M24 254L13 337M488 141L545 223M169 414L140 350M556 14L488 141" stroke="#E4DCF6" stroke-width="1.2" fill="none"/><circle cx="178" cy="68" r="4.5" fill="#CFC5F0" opacity=".75"/><circle cx="368" cy="28" r="2.5" fill="#B8A9E8" opacity=".75"/><circle cx="24" cy="254" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="31" cy="37" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="236" cy="420" r="4.5" fill="#CFC5F0" opacity=".75"/><circle cx="62" cy="106" r="6" fill="#B8A9E8" opacity=".75"/><circle cx="354" cy="483" r="6" fill="#CFC5F0" opacity=".75"/><circle cx="556" cy="14" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="488" cy="141" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="169" cy="414" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="95" cy="292" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="308" cy="23" r="4.5" fill="#CFC5F0" opacity=".75"/><circle cx="451" cy="353" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="295" cy="445" r="2.5" fill="#CFC5F0" opacity=".75"/><circle cx="413" cy="140" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="13" cy="337" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="433" cy="288" r="2.5" fill="#B8A9E8" opacity=".75"/><circle cx="477" cy="481" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="87" cy="51" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="125" cy="242" r="4.5" fill="#B8A9E8" opacity=".75"/><circle cx="543" cy="349" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="497" cy="405" r="4.5" fill="#B8A9E8" opacity=".75"/><circle cx="49" cy="179" r="6" fill="#CFC5F0" opacity=".75"/><circle cx="5" cy="445" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="136" cy="171" r="6" fill="#CFC5F0" opacity=".75"/><circle cx="189" cy="128" r="2.5" fill="#CFC5F0" opacity=".75"/><circle cx="471" cy="74" r="3.5" fill="#CFC5F0" opacity=".75"/><circle cx="87" cy="391" r="6" fill="#CFC5F0" opacity=".75"/><circle cx="196" cy="5" r="2.5" fill="#B8A9E8" opacity=".75"/><circle cx="6" cy="135" r="6" fill="#CFC5F0" opacity=".75"/><circle cx="140" cy="350" r="2.5" fill="#CFC5F0" opacity=".75"/><circle cx="545" cy="223" r="3.5" fill="#B8A9E8" opacity=".75"/><circle cx="533" cy="504" r="2.5" fill="#CFC5F0" opacity=".75"/><circle cx="477" cy="239" r="6" fill="#CFC5F0" opacity=".75"/></g>
+        <path d="M226.0 156.5L209.5 127.9M334.0 156.5L350.5 127.9M388.0 250.0L447.0 250.0M334.0 343.5L350.5 372.1M226.0 343.5L209.5 372.1M172.0 250.0L113.0 250.0" stroke="#8270C4" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="194" cy="101" r="29" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/><svg x="180" y="87" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-sql"/></svg><circle cx="366" cy="101" r="29" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/><svg x="352" y="87" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-python"/></svg><circle cx="478" cy="250" r="29" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/><svg x="464" y="236" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-machine-learning"/></svg><circle cx="366" cy="399" r="29" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/><svg x="352" y="385" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-statistics"/></svg><circle cx="194" cy="399" r="29" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/><svg x="180" y="385" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-data-visualization"/></svg><circle cx="82" cy="250" r="29" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/><svg x="68" y="236" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#i-brief"/></svg>
+        <circle cx="280" cy="250" r="106" fill="#FFFFFF" stroke="#B8A9E8" stroke-width="3"/>
+        <circle cx="280" cy="250" r="94" fill="#EEE9FA"/>
+        <image href="assets/naufal.jpg" x="186" y="156" width="188" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#av)"/>
+        <circle cx="280" cy="250" r="94" fill="none" stroke="#171622" stroke-width="3.5"/>
+        <text x="194" y="46" font-size="16.5" font-weight="600" fill="#171622" text-anchor="middle" class="lt">SQL</text><text x="194" y="63" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">MySQL · BigQuery</text><text x="366" y="46" font-size="16.5" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Python</text><text x="366" y="63" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Data wrangling</text><text x="478" y="301" font-size="16.5" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Machine Learning</text><text x="478" y="318" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Predictive models</text><text x="366" y="450" font-size="16.5" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Statistics</text><text x="366" y="467" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">EDA · Testing</text><text x="194" y="450" font-size="16.5" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Visualization</text><text x="194" y="467" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Tableau · Storytelling</text><text x="82" y="301" font-size="16.5" font-weight="600" fill="#171622" text-anchor="middle" class="lt">Tools</text><text x="82" y="318" font-size="12.5" fill="#5C566C" text-anchor="middle" class="lt">Excel · Sheets · Jupyter</text>
+      </svg>
+    </figure>
+  </div>
+
+  <section id="about" class="about">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-user"/></svg></span>About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+    <p>As a Data Analyst, I dig into operational, financial and behavioral data to find where a business loses efficiency, how money moves and how customers act, then turn the findings into clear visuals and recommendations. My toolkit centers on SQL, Python, Excel and Tableau, backed by an Entrepreneurship degree from Universitas Brawijaya and training at Purwadhika.</p>
+      </div>
+      <figure class="flowfig" aria-hidden="true">
+      <svg viewBox="0 0 440 310" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans,system-ui,sans-serif">
+        <path d="M428 146L405 16M16 256L70 301M137 15L19 24M222 304L304 297M370 301L222 304M262 15L334 14M18 190L13 106M16 256L18 190M19 24L13 106M370 301L304 297M370 301L419 261M18 190L70 301M334 14L405 16M137 15L262 15M428 146L419 261" stroke="#E4DCF6" stroke-width="1.2" fill="none"/><circle cx="16" cy="256" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="428" cy="146" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="137" cy="15" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="370" cy="301" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="222" cy="304" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="262" cy="15" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="18" cy="190" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="19" cy="24" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="334" cy="14" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="419" cy="261" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="70" cy="301" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="13" cy="106" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="405" cy="16" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/><circle cx="304" cy="297" r="3" fill="#F7F5FC" stroke="#CFC5F0" stroke-width="1.3"/>
+        <g fill="none" stroke="#8270C4" stroke-width="3" stroke-linecap="round"><path class="flowline" d="M164 58C210 58 208 157 238 157"/><path class="flowline" d="M164 124C210 124 208 157 238 157"/><path class="flowline" d="M164 190C210 190 208 157 238 157"/><path class="flowline" d="M164 256C210 256 208 157 238 157"/><path class="flowline" d="M298 157L358 157"/></g>
+        <circle cx="150" cy="58" r="13" fill="#FFFFFF" stroke="#171622" stroke-width="3"/><circle cx="150" cy="124" r="13" fill="#FFFFFF" stroke="#171622" stroke-width="3"/><circle cx="150" cy="190" r="13" fill="#FFFFFF" stroke="#171622" stroke-width="3"/><circle cx="150" cy="256" r="13" fill="#FFFFFF" stroke="#171622" stroke-width="3"/>
+        <circle cx="268" cy="157" r="30" fill="#FFFFFF" stroke="#171622" stroke-width="3.5"/>
+        <svg x="253" y="142" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#8270C4"><use href="#ic-data-analysis"/></svg>
+        <circle cx="386" cy="157" r="28" fill="#B8A9E8" stroke="#171622" stroke-width="3.5"/>
+        <svg x="372" y="143" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#171622;--icon-accent:#171622"><use href="#ic-data-visualization"/></svg>
+        <text class="tr" x="128" y="56" font-size="13" font-weight="600" fill="#171622" text-anchor="end">Operations</text><text class="tr" x="128" y="72" font-size="11.5" fill="#5C566C" text-anchor="end">Process efficiency</text><text class="tr" x="128" y="122" font-size="13" font-weight="600" fill="#171622" text-anchor="end">Finance</text><text class="tr" x="128" y="138" font-size="11.5" fill="#5C566C" text-anchor="end">Revenue &amp; cost</text><text class="tr" x="128" y="188" font-size="13" font-weight="600" fill="#171622" text-anchor="end">Marketing</text><text class="tr" x="128" y="204" font-size="11.5" fill="#5C566C" text-anchor="end">Customer behavior</text><text class="tr" x="128" y="254" font-size="13" font-weight="600" fill="#171622" text-anchor="end">HR / People</text><text class="tr" x="128" y="270" font-size="11.5" fill="#5C566C" text-anchor="end">Workforce data</text>
+        <text class="tr" x="268" y="115" font-size="13.5" font-weight="600" fill="#171622" text-anchor="middle">Analysis</text>
+        <text class="tr" x="268" y="207" font-size="11.5" fill="#5C566C" text-anchor="middle">Clean · Explore · Test</text>
+        <text class="tr" x="386" y="117" font-size="13.5" font-weight="600" fill="#171622" text-anchor="middle">Insight</text>
+        <text class="tr" x="386" y="205" font-size="11.5" fill="#5C566C" text-anchor="middle">Visuals &amp;</text>
+        <text class="tr" x="386" y="220" font-size="11.5" fill="#5C566C" text-anchor="middle">recommendations</text>
+      </svg>
+    </figure>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-folder"/></svg></span>Projects</h2><p>What each project is about and the tools I used.</p></div>
+    <div class="projects">
+
+      <article class="proj">
+        <div>
+          <div class="thumb"><img src="assets/projects/bluebird.jpg" alt="A blue Bluebird taxi driving through a busy city street" width="1200" height="800"></div><h3>Blue Bird Taxi: Demand and Fleet Insights</h3>
+          <p class="desc">Analysis of Blue Bird taxi service requests and driver shifts to find out why many drivers sit idle while some customers cannot get a taxi. Includes data cleaning, statistical testing and regression, and data-driven recommendations tied to measurable KPIs.</p>
+          <ul class="tags"><li>MySQL</li><li>Python</li><li>pandas</li><li>SciPy</li><li>statsmodels</li><li>Matplotlib</li></ul>
+          <div class="links">
+            <a class="btn solid small" href="https://github.com/naufalarkan2004-spec/bluebird-taxi-demand-fleet-insights-analysis" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>View code on GitHub</a>
+          
+            <a class="btn ghost small" id="rep-bluebird" href="#" target="_blank" rel="noopener" hidden><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Report</a>
+          </div>
+        </div>
+        
+      </article>
+
+      <article class="proj">
+        <div>
+          <div class="thumb"><img src="assets/projects/sicepat.jpg" alt="A courier picking up parcels from a small online seller" width="1200" height="800"></div><h3>SiCepat Ekspres: First-Mile Pickup and Revenue Leakage</h3>
+          <p class="desc">Team analysis of 300,000 first-mile pickup records (practice dataset) to detect phantom pickups, where couriers mark a pickup done before the seller requested it, and revenue lost when sellers under-declare package weight. Includes data cleaning, feature engineering, exploratory data analysis and recommendations for SLA enforcement and revenue recovery.</p>
+          <ul class="tags"><li>Python</li><li>pandas</li><li>Data Cleaning</li><li>Feature Engineering</li><li>EDA</li></ul>
+          <div class="links">
+            <a class="btn solid small" href="https://github.com/naufalarkan2004-spec/data_analysis_report_sicepat" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>View code on GitHub</a>
+            <a class="btn ghost small" href="https://github.com/naufalarkan2004-spec/data_analysis_report_sicepat/blob/main/PPT%20Team%203%20(Updated).pdf" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div>
+          <div class="thumb"><img src="assets/projects/happiness.jpg" alt="Families relaxing together in a city park" width="1200" height="800"></div><h3>Indonesia Happiness Trends: World Happiness Report</h3>
+          <p class="desc">Statistical study of Indonesia&rsquo;s life evaluation scores from the World Happiness Report: how they changed over time, how Indonesia compares with the global average and ASEAN peers, and which factors move together with happiness. Includes central tendency, dispersion, outlier detection, distribution and correlation analysis.</p>
+          <ul class="tags"><li>Python</li><li>pandas</li><li>Statistics</li><li>Data Visualization</li></ul>
+          <div class="links">
+            <a class="btn solid small" href="https://github.com/naufalarkan2004-spec/Statistics_Exercise_1" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>View code on GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      
+
+            <article class="proj">
+        <div>
+          <div class="thumb"><img src="assets/projects/employee.jpg" alt="An HR professional reviewing employee records on a computer" width="1200" height="800"></div><h3>Employee Data Management System</h3>
+          <p class="desc">Python console application for managing employee records with create, read, update and delete. Includes input validation, a recycle bin for restoring deleted records, and a log of every update.</p>
+          <ul class="tags"><li>Python</li><li>Data validation</li></ul>
+          <div class="links">
+            <a class="btn solid small" href="https://github.com/naufalarkan2004-spec/Employee_Data_Management_System_Program_Python" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>View code on GitHub</a>
+          
+            <a class="btn ghost small" id="rep-employee" href="#" target="_blank" rel="noopener" hidden><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Report</a>
+          </div>
+        </div>
+        
+      </article>
+
+      <article class="proj pending" id="dashboard-card">
+        <div>
+          <span class="badge" id="dash-badge">In progress</span>
+          <div class="thumb"><img src="assets/projects/churn.jpg" alt="A laptop showing a customer churn analytics dashboard" width="1200" height="800"></div><h3>E-Commerce Customer Churn Dashboard</h3>
+          <p class="desc">Interactive Tableau dashboard that helps an e-commerce team see which customers are likely to leave and what separates them from customers who stay. <span id="dash-pending-note">In progress for the Purwadhika Portfolio Building assignment. The link and a short video will be added when it is published.</span></p>
+          <ul class="tags"><li id="dash-tool">Tableau</li></ul>
+          <div class="links">
+            <a class="btn solid small" id="dash-link" href="#" target="_blank" rel="noopener" hidden>View dashboard</a>
+            <a class="btn ghost small" id="dash-video" href="#" target="_blank" rel="noopener" hidden>Watch business goal video</a>
+          
+            <a class="btn ghost small" id="rep-churn" href="#" target="_blank" rel="noopener" hidden><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Report</a>
+          </div>
+        </div>
+        
+      </article>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-brief"/></svg></span>Experience &amp; Education</h2><p>Newest first. Hands-on experience from running my own business and from student organizations.</p></div>
+
+    <div class="group-title"><svg class="ic " aria-hidden="true"><use href="#i-brief"/></svg>Experience</div>
+    <div class="ledger">
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>Mar – Sep 2025</div>
+        <div>
+          <h3>Owner, Es SiGemoy</h3>
+          <div class="org">Es teler and alpukat kocok (avocado shake) business, Cianjur · basis of my undergraduate thesis</div>
+          <ul>
+            <li>Achieved Rp48.5 million in revenue and approximately Rp10.1 million in net profit over 7 months by selling 4,386 cups of es teler and alpukat kocok through a rented kiosk and online sales (B2C).</li>
+            <li>Reduced raw-material waste on no-sales days through cold storage, based on daily records of sales, cost per cup, cash flow, and profit and loss in Google Sheets.</li>
+            <li>Passed the Business Verification organized by the Department of Management, Faculty of Economics and Business, Universitas Brawijaya (Oct 2025).</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>2023</div>
+        <div>
+          <h3>Inventory Section Staff and Athlete</h3>
+          <div class="org">UKM Taekwondo Indonesia Universitas Brawijaya, Malang</div>
+          <ul>
+            <li>Built a structured inventory system by continuing the previous cohort's records (90 coded items): assigned new codes 1-190 to 190 items across 3 locations in a spreadsheet database, including 100 items that previously had no code. Contribution recognized with a certificate from the Rector.</li>
+            <li>Ran monthly inventory counts and assessed the condition of 183 items (87 good, 64 defective, 32 broken), including 102 items with no prior condition record, identifying 96 defective or broken items.</li>
+            <li>Won 2 first places in the M-Kyorugi category at the provincial level (East Java Provincial Taekwondo Championship and Pangdam V/Brawijaya Cup).</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>During university</div>
+        <div>
+          <h3>Committee Member</h3>
+          <div class="org">Student activities, Universitas Brawijaya</div>
+          <ul>
+            <li>Served on several committees in logistics and field operations roles, and joined seminars and short bootcamps.</li>
+            <li>2024: AWMM business plan secured funding.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="group-title"><svg class="ic " aria-hidden="true"><use href="#i-cap"/></svg>Education and training</div>
+    <div class="ledger">
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>Aug 2026 – present</div>
+        <div>
+          <h3>Data Science &amp; Machine Learning Bootcamp</h3>
+          <div class="org">Purwadhika Digital School, BSD</div>
+          <ul>
+            <li>Structured, project-based training in data analysis and machine learning, from Python programming fundamentals to end-to-end analysis projects.</li>
+            <li>Practiced querying databases with SQL, cleaning and exploring data with Python (pandas, NumPy), testing findings with statistical analysis, and presenting insights through data visualization, Tableau dashboards and data storytelling.</li>
+            <li>Completed the machine learning module, covering supervised and unsupervised learning, feature engineering and model evaluation.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>2022 – Jun 2026</div>
+        <div>
+          <h3>Bachelor of Entrepreneurship</h3>
+          <div class="org">Universitas Brawijaya, Malang · Faculty of Economics and Business · GPA 3.76/4.00</div>
+          <ul>
+            <li>Relevant coursework: Statistics (grade A), Business Research Methods, Financial Management, Operations Management, Marketing Management, Human Resource Management, Consumer Behavior, Business Planning and Strategy.</li>
+            <li>Ran the Es SiGemoy business as the basis of the undergraduate thesis.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="row">
+        <div class="when"><svg class="ic " aria-hidden="true"><use href="#i-cal"/></svg>Dec 2025</div>
+        <div>
+          <h3>Designing Products Users Love with Data (online course)</h3>
+          <div class="org">Skill Academy by Ruangguru · certificate of completion</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#ic-problem-solving"/></svg></span>Skills</h2><p>Skills I use in my projects and coursework.</p></div>
+    <div class="skillbox">
+      <div class="sk-row"><div class="sk-label">Hard skills</div><ul class="sk-chips"><li>Data Wrangling</li><li>Data Cleaning</li><li>Exploratory Data Analysis</li><li>Statistics</li><li>Data Visualization</li><li>Data Storytelling</li><li>Machine Learning</li><li>Data-Driven Decision Making</li><li>SQL (MySQL)</li><li>Google BigQuery</li><li>Python</li><li>Tableau</li><li>Microsoft Excel</li><li>Google Sheets</li><li>Microsoft PowerPoint</li><li>Canva</li><li>Jupyter Notebook</li><li>Google Colab</li><li>GitHub</li><li>Claude Code</li></ul></div>
+      <div class="sk-row"><div class="sk-label">Soft skills</div><ul class="sk-chips"><li>Analytical Thinking</li><li>Problem-Solving</li><li>Critical Thinking</li><li>Business Acumen</li><li>Data Storytelling and Presentation</li><li>Stakeholder Management and Communication</li><li>Attention to Detail</li><li>Collaboration and Teamwork</li><li>Team Leadership</li><li>Multilingual: English and Bahasa Indonesia</li></ul></div>
+    </div>
+    <p class="skills-note">I have completed the machine learning module at Purwadhika. A machine learning project will be added to my portfolio soon.</p>
+    <div class="flow-title">How I work with data</div>
+    <p class="flow-sub">From a business question to a decision, in five steps.</p>
+    <ol class="flow">
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-research"/></svg></span><b><i class="n">1</i>Understand the question</b><span>Clarify what the business needs to decide and what data can answer it.</span><em>Business context</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-sql"/></svg></span><b><i class="n">2</i>Collect the data</b><span>Pull only the tables and rows the question needs from the database.</span><em>SQL · Google BigQuery</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-data-cleaning"/></svg></span><b><i class="n">3</i>Clean and prepare</b><span>Fix missing values, duplicates and errors so the numbers can be trusted.</span><em>Python · Excel · Google Sheets</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-statistics"/></svg></span><b><i class="n">4</i>Analyze and test</b><span>Explore patterns and use statistics to check which differences are real.</span><em>Python · Jupyter · Statistics</em></li>
+      <li><span class="chip-ic sm"><svg class="ic " aria-hidden="true"><use href="#ic-data-visualization"/></svg></span><b><i class="n">5</i>Show and recommend</b><span>Turn findings into charts, dashboards and clear recommendations.</span><em>Tableau · PowerPoint</em></li>
+    </ol>
+  </section>
+
+
+  <section id="contact" class="contact">
+    <div class="sec-head"><h2><span class="chip-ic"><svg class="ic " aria-hidden="true"><use href="#i-mail"/></svg></span>Contact</h2></div>
+    <p class="lead">I am open to data analyst, business intelligence and reporting internships in Jakarta and Tangerang, on site or remote. The quickest way to reach me is LinkedIn.</p>
+    <div class="cta">
+      <a class="btn solid" href="https://www.linkedin.com/in/naufal-arkan-muhana-81b800220" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/naufalarkan2004-spec" target="_blank" rel="noopener"><svg class="ic " aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
+      <a class="btn ghost" id="cv-link" href="#" target="_blank" rel="noopener" hidden>Download CV</a>
+    </div>
+    <form class="cform" id="cform" novalidate>
+      <h3 class="cform-title">Send me a message</h3>
+      <div class="cgrid">
+        <div class="fld"><label for="cf-name">Full name</label><input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="80"></div>
+        <div class="fld"><label for="cf-email">Email address</label><input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="120"></div>
+        <div class="fld"><label for="cf-phone">Mobile number <span>(optional)</span></label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></div>
+        <div class="fld"><label for="cf-subject">Subject</label><input id="cf-subject" name="subject" type="text" required maxlength="120"></div>
+        <div class="fld wide"><label for="cf-message">Your message</label><textarea id="cf-message" name="message" rows="6" required maxlength="3000"></textarea></div>
+      </div>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <div class="cform-actions"><button class="btn solid" id="cf-send" type="submit">Send message</button><p id="cf-status" role="status" aria-live="polite"></p></div>
+    </form>
+    <div class="infos">
+      <div class="info" id="mail-line" hidden><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><b>Email</b><span id="mail-addr"></span></div>
+      <div class="info"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><b>Location</b><span>Tangerang, Banten, Indonesia</span></div>
+      <div class="info"><svg class="ic" aria-hidden="true"><use href="#i-in"/></svg><b>LinkedIn</b><a href="https://www.linkedin.com/in/naufal-arkan-muhana-81b800220" target="_blank" rel="noopener">naufal-arkan-muhana</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap"><span>© 2026 Naufal Arkan Muhana</span><a class="totop" href="#top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Back to top</a></div></footer>
+
+<script>
+(function(){
+  try{
+    if(!window.IntersectionObserver||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+    var els=[].slice.call(document.querySelectorAll("main section > *, .row, .proj, .skills > *, .flow li, .about .flowfig"));
+    els=els.filter(function(e,i){return els.indexOf(e)===i});
+    document.documentElement.classList.add("js");
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.08});
+    els.forEach(function(e,i){e.classList.add("rv");e.style.setProperty("--d",((i%3)*0.08)+"s");io.observe(e)});
+    setTimeout(function(){els.forEach(function(e){e.classList.add("in")})},4000);
+  }catch(e){document.documentElement.classList.remove("js")}
+})();
+</script>
+<script>
+/* Fill these in when ready. Anything left empty stays hidden, so no dead links show. */
+var CONFIG = {
+  email: "naufalarkan2004@gmail.com",
+  cvUrl: "assets/Naufal-Arkan-Muhana-CV.pdf",
+  dashboardUrl: "",   // public Tableau / Looker Studio link
+  dashboardVideoUrl: "",
+  formEndpoint: "",   // optional Formspree URL, e.g. "https://formspree.io/f/abcdwxyz"
+  reports: { bluebird: "https://github.com/naufalarkan2004-spec/bluebird-taxi-demand-fleet-insights-analysis/blob/main/reports/slide/Business%20Presentation.pdf", employee: "", churn: "" },   // link or file for each project report, e.g. "assets/reports/bluebird.pdf"
+  dashboardTool: "Tableau"   // or "Looker Studio"
+};
+(function(){
+  try{
+    var links=[].slice.call(document.querySelectorAll("nav a"));
+    var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.remove("on")});var a=map[e.target.id];if(a)a.classList.add("on")}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }catch(e){}
+})();
+(function () {
+  function $(id) { return document.getElementById(id); }
+  if (CONFIG.email) { $("mail-addr").textContent = CONFIG.email; $("mail-line").hidden = false; }
+  if (CONFIG.cvUrl) { $("cv-link").href = CONFIG.cvUrl; $("cv-link").hidden = false; $("hero-cv").href = CONFIG.cvUrl; $("hero-cv").hidden = false; }
+  $("dash-tool").textContent = CONFIG.dashboardTool;
+  if (CONFIG.dashboardUrl) {
+    $("dash-link").href = CONFIG.dashboardUrl; $("dash-link").hidden = false;
+    $("dash-badge").hidden = true;
+    $("dash-pending-note").hidden = true;
+    $("dashboard-card").classList.remove("pending");
+  }
+  [["bluebird","rep-bluebird"],["employee","rep-employee"],["churn","rep-churn"]].forEach(function(p){
+    var u=CONFIG.reports&&CONFIG.reports[p[0]],a=$(p[1]); if(u&&a){a.href=u;a.hidden=false}
+  });
+  if (CONFIG.dashboardVideoUrl) { $("dash-video").href = CONFIG.dashboardVideoUrl; $("dash-video").hidden = false; }
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById("cform"); if(!f) return;
+  var st=document.getElementById("cf-status"), btn=document.getElementById("cf-send");
+  function say(t,c){st.textContent=t;st.className=c||""}
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var d={name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),subject:f.subject.value.trim(),message:f.message.value.trim()};
+    [].forEach.call(f.querySelectorAll("input,textarea"),function(x){x.classList.remove("bad")});
+    var bad=[];
+    if(!d.name)bad.push(f.name); if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))bad.push(f.email);
+    if(!d.subject)bad.push(f.subject); if(d.message.length<5)bad.push(f.message);
+    if(bad.length){bad.forEach(function(x){x.classList.add("bad")});bad[0].focus();say(T("Please complete the highlighted fields."),"err");return}
+    if(f._gotcha.value) return;
+    if(CONFIG.formEndpoint){
+      btn.disabled=true; say(T("Sending..."));
+      fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)})
+        .then(function(r){if(!r.ok)throw new Error("bad status");f.reset();say(T("Thanks, your message was sent. I will reply to ")+d.email+".","ok")})
+        .catch(function(){say(T("Sorry, that did not send. Please email me directly")+(CONFIG.email?T(" at ")+CONFIG.email:"")+".","err")})
+        .then(function(){btn.disabled=false});
+    }else if(CONFIG.email){
+      var body="From: "+d.name+" <"+d.email+">"+(d.phone?"\nPhone: "+d.phone:"")+"\n\n"+d.message;
+      say(T("Opening your email app. If nothing opens, write to ")+CONFIG.email+".","ok");
+      window.location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent(d.subject)+"&body="+encodeURIComponent(body);
+    }else{say(T("The contact form is not set up yet."),"err")}
+  });
+})();
+</script>
+<script>
+var I18N_ID={"HR / People": "SDM", "Workforce data": "Data karyawan", "Operations": "Operasional", "Process efficiency": "Efisiensi proses", "Finance": "Keuangan", "Revenue & cost": "Pendapatan & biaya", "Marketing": "Pemasaran", "Customer behavior": "Perilaku pelanggan", "Relevant coursework: Statistics (grade A), Business Research Methods, Financial Management, Operations Management, Marketing Management, Human Resource Management, Consumer Behavior, Business Planning and Strategy.": "Mata kuliah relevan: Statistika (nilai A), Metode Penelitian Bisnis, Manajemen Keuangan, Manajemen Operasional, Manajemen Pemasaran, Manajemen SDM, Perilaku Konsumen, Perencanaan dan Strategi Bisnis.", "Operational": "Operasional", "Efficiency": "Efisiensi", "Financial": "Finansial", "Money flow": "Arus uang", "Behavioral": "Perilaku", "Customers": "Pelanggan", "Analysis": "Analisis", "Clean · Explore · Test": "Bersihkan · Eksplorasi · Uji", "Insight": "Insight", "Visuals &": "Visual &", "recommendations": "rekomendasi", "Completed the machine learning module, covering supervised and unsupervised learning, feature engineering and model evaluation.": "Menyelesaikan modul machine learning, yang mencakup supervised dan unsupervised learning, feature engineering, serta evaluasi model.", "I have completed the machine learning module at Purwadhika. A machine learning project will be added to my portfolio soon.": "Saya sudah menyelesaikan modul machine learning di Purwadhika. Proyek machine learning akan segera ditambahkan ke portofolio saya.", "As a Data Analyst, I dig into operational, financial and behavioral data to find where a business loses efficiency, how money moves and how customers act, then turn the findings into clear visuals and recommendations. My toolkit centers on SQL, Python, Excel and Tableau, backed by an Entrepreneurship degree from Universitas Brawijaya and training at Purwadhika.": "Sebagai Data Analyst, saya menggali data operasional, finansial, dan perilaku untuk menemukan di mana bisnis kehilangan efisiensi, bagaimana uang bergerak, dan bagaimana pelanggan bertindak, lalu mengubah temuan menjadi visual dan rekomendasi yang jelas. Perangkat utama saya adalah SQL, Python, Excel, dan Tableau, didukung gelar Kewirausahaan dari Universitas Brawijaya dan pelatihan di Purwadhika.", "Skills network with a photo of Naufal Arkan Muhana at the center, connected to six skill areas: SQL, Python, machine learning, statistics, data visualization and tools.": "Jaringan keahlian dengan foto Naufal Arkan Muhana di tengah, terhubung ke enam bidang: SQL, Python, machine learning, statistika, visualisasi data, dan tools.", "SiCepat Ekspres: First-Mile Pickup and Revenue Leakage": "SiCepat Ekspres: Pickup First-Mile dan Kebocoran Pendapatan", "Team analysis of 300,000 first-mile pickup records (practice dataset) to detect phantom pickups, where couriers mark a pickup done before the seller requested it, and revenue lost when sellers under-declare package weight. Includes data cleaning, feature engineering, exploratory data analysis and recommendations for SLA enforcement and revenue recovery.": "Analisis tim atas 300.000 data pickup first-mile (dataset latihan) untuk mendeteksi phantom pickup, yaitu saat kurir menandai pickup selesai sebelum seller memintanya, serta pendapatan yang hilang karena seller melaporkan berat paket lebih rendah. Mencakup data cleaning, feature engineering, exploratory data analysis, dan rekomendasi untuk penegakan SLA dan pemulihan pendapatan.", "Indonesia Happiness Trends: World Happiness Report": "Tren Kebahagiaan Indonesia: World Happiness Report", "Statistical study of Indonesia’s life evaluation scores from the World Happiness Report: how they changed over time, how Indonesia compares with the global average and ASEAN peers, and which factors move together with happiness. Includes central tendency, dispersion, outlier detection, distribution and correlation analysis.": "Studi statistik skor life evaluation Indonesia dari World Happiness Report: bagaimana perubahannya dari waktu ke waktu, posisi Indonesia dibanding rata-rata global dan negara ASEAN, serta faktor apa saja yang bergerak seiring dengan kebahagiaan. Mencakup ukuran pemusatan, dispersi, deteksi outlier, distribusi, dan analisis korelasi.", "A courier picking up parcels from a small online seller": "Kurir mengambil paket dari seller online kecil", "Families relaxing together in a city park": "Keluarga bersantai bersama di taman kota", "Switch to dark mode": "Ganti ke mode gelap", "Switch to light mode": "Ganti ke mode terang", "About": "Tentang", "Experience & Education": "Pengalaman & Pendidikan", "Skills": "Keahlian", "Projects": "Proyek", "Contact": "Kontak", "Hi, I’m": "Halo, saya", "I am a": "Saya seorang", "Turning business data into decisions.": "Mengubah data bisnis menjadi keputusan.", "I combine business understanding with SQL, Python, statistical analysis and data visualization to find what drives a business problem and turn it into insights a team can act on.": "Saya memadukan pemahaman bisnis dengan SQL, Python, analisis statistik, dan visualisasi data untuk menemukan akar masalah bisnis dan mengubahnya menjadi insight yang bisa langsung ditindaklanjuti tim.", "Explore my projects": "Lihat proyek saya", "Contact me": "Hubungi saya", "Download CV": "Unduh CV", "As a Data Analyst, I dig into operational, financial and behavioral data to understand how a business really performs: where operations lose efficiency, how money moves, and how customers act. I clean and explore the data, use statistics to check which patterns are real, and turn the results into clear visuals and recommendations that support better decisions.": "Sebagai Data Analyst, saya menggali data operasional, finansial, dan perilaku untuk memahami kinerja bisnis yang sebenarnya: di mana operasional kehilangan efisiensi, bagaimana uang bergerak, dan bagaimana pelanggan bertindak. Saya membersihkan dan mengeksplorasi data, memakai statistik untuk memastikan pola mana yang benar-benar nyata, lalu mengubah hasilnya menjadi visual dan rekomendasi yang jelas untuk mendukung keputusan yang lebih baik.", "My toolkit centers on SQL (MySQL) and Python (pandas, NumPy, SciPy, statsmodels), alongside Excel, Google Sheets, Tableau and Matplotlib. An Entrepreneurship degree from Universitas Brawijaya and running my own business keep my analysis tied to real business goals, while training at Purwadhika gave it structure. I’m now building my machine learning skills to move from explaining what happened to anticipating what comes next.": "Perangkat utama saya adalah SQL (MySQL) dan Python (pandas, NumPy, SciPy, statsmodels), didukung Excel, Google Sheets, Tableau, dan Matplotlib. Gelar Kewirausahaan dari Universitas Brawijaya dan pengalaman menjalankan usaha sendiri membuat analisis saya tetap terhubung dengan tujuan bisnis nyata, sementara pelatihan di Purwadhika memberinya struktur. Kini saya sedang mengembangkan kemampuan machine learning agar tidak hanya menjelaskan apa yang sudah terjadi, tetapi juga mengantisipasi apa yang akan terjadi.", "Newest first. Hands-on experience from running my own business and from student organizations.": "Terbaru di atas. Pengalaman langsung dari menjalankan usaha sendiri dan dari organisasi mahasiswa.", "Experience": "Pengalaman", "Mar – Sep 2025": "Mar – Sep 2025", "Owner, Es SiGemoy": "Pemilik, Es SiGemoy", "Es teler and alpukat kocok (avocado shake) business, Cianjur · basis of my undergraduate thesis": "Usaha es teler dan alpukat kocok, Cianjur · dasar skripsi saya", "Achieved Rp48.5 million in revenue and approximately Rp10.1 million in net profit over 7 months by selling 4,386 cups of es teler and alpukat kocok through a rented kiosk and online sales (B2C).": "Meraih pendapatan Rp48,5 juta dan laba bersih sekitar Rp10,1 juta selama 7 bulan dengan menjual 4.386 cup es teler dan alpukat kocok melalui kios sewaan dan penjualan online (B2C).", "Reduced raw-material waste on no-sales days through cold storage, based on daily records of sales, cost per cup, cash flow, and profit and loss in Google Sheets.": "Mengurangi bahan baku terbuang pada hari tanpa penjualan dengan cold storage, berdasarkan pencatatan harian penjualan, biaya per cup, arus kas, serta laba rugi di Google Sheets.", "Passed the Business Verification organized by the Department of Management, Faculty of Economics and Business, Universitas Brawijaya (Oct 2025).": "Lulus Verifikasi Usaha yang diselenggarakan Departemen Manajemen, Fakultas Ekonomi dan Bisnis, Universitas Brawijaya (Okt 2025).", "Inventory Section Staff and Athlete": "Staf Seksi Inventaris dan Atlet", "Built a structured inventory system by continuing the previous cohort's records (90 coded items): assigned new codes 1-190 to 190 items across 3 locations in a spreadsheet database, including 100 items that previously had no code. Contribution recognized with a certificate from the Rector.": "Membangun sistem inventaris terstruktur dengan melanjutkan catatan angkatan sebelumnya (90 barang berkode): memberi kode baru 1-190 untuk 190 barang di 3 lokasi dalam database spreadsheet, termasuk 100 barang yang sebelumnya belum berkode. Kontribusi ini mendapat sertifikat dari Rektor.", "Ran monthly inventory counts and assessed the condition of 183 items (87 good, 64 defective, 32 broken), including 102 items with no prior condition record, identifying 96 defective or broken items.": "Melakukan stock opname bulanan dan menilai kondisi 183 barang (87 baik, 64 cacat, 32 rusak), termasuk 102 barang yang sebelumnya tidak memiliki catatan kondisi, sehingga teridentifikasi 96 barang cacat atau rusak.", "Won 2 first places in the M-Kyorugi category at the provincial level (East Java Provincial Taekwondo Championship and Pangdam V/Brawijaya Cup).": "Meraih 2 juara pertama kategori M-Kyorugi tingkat provinsi (Kejuaraan Provinsi Taekwondo Jawa Timur dan Piala Pangdam V/Brawijaya).", "During university": "Selama kuliah", "Committee Member": "Anggota Kepanitiaan", "Student activities, Universitas Brawijaya": "Kegiatan mahasiswa, Universitas Brawijaya", "Served on several committees in logistics and field operations roles, and joined seminars and short bootcamps.": "Menjadi panitia di beberapa kegiatan pada divisi logistik dan lapangan, serta mengikuti seminar dan bootcamp singkat.", "2024: AWMM business plan secured funding.": "2024: Rencana bisnis AWMM berhasil mendapatkan pendanaan.", "Education and training": "Pendidikan dan pelatihan", "Aug 2026 – present": "Agu 2026 – sekarang", "Structured, project-based training in data analysis and machine learning, from Python programming fundamentals to end-to-end analysis projects.": "Pelatihan terstruktur berbasis proyek di bidang analisis data dan machine learning, mulai dari dasar pemrograman Python hingga proyek analisis end-to-end.", "Practiced querying databases with SQL, cleaning and exploring data with Python (pandas, NumPy), testing findings with statistical analysis, and presenting insights through data visualization, Tableau dashboards and data storytelling.": "Berlatih mengambil data dari database dengan SQL, membersihkan dan mengeksplorasi data dengan Python (pandas, NumPy), menguji temuan dengan analisis statistik, serta menyajikan insight melalui visualisasi data, dashboard Tableau, dan data storytelling.", "Currently completing the machine learning module, covering supervised and unsupervised learning, feature engineering and model evaluation.": "Saat ini menyelesaikan modul machine learning, yang mencakup supervised dan unsupervised learning, feature engineering, serta evaluasi model.", "2022 – Jun 2026": "2022 – Jun 2026", "Bachelor of Entrepreneurship": "Sarjana Kewirausahaan", "Universitas Brawijaya, Malang · Faculty of Economics and Business · GPA 3.76/4.00": "Universitas Brawijaya, Malang · Fakultas Ekonomi dan Bisnis · IPK 3,76/4,00", "Relevant coursework: Research Method in Business, Financial Management, Operational Management, Consumer Behavior.": "Mata kuliah relevan: Metode Penelitian Bisnis, Manajemen Keuangan, Manajemen Operasional, Perilaku Konsumen.", "Ran the Es SiGemoy business as the basis of the undergraduate thesis.": "Menjalankan usaha Es SiGemoy sebagai dasar skripsi.", "Dec 2025": "Des 2025", "Designing Products Users Love with Data (online course)": "Designing Products Users Love with Data (kursus online)", "Skill Academy by Ruangguru · certificate of completion": "Skill Academy by Ruangguru · sertifikat kelulusan", "Skills I use in my projects and coursework.": "Keahlian yang saya gunakan dalam proyek dan pelatihan.", "Hard skills": "Hard skills", "Soft skills": "Soft skills", "Statistics": "Statistika", "Critical Thinking": "Berpikir Kritis", "Analytical Thinking": "Berpikir Analitis", "Problem-Solving": "Pemecahan Masalah", "Logical Reasoning": "Penalaran Logis", "Problem Framing and Requirements Gathering": "Perumusan Masalah dan Pengumpulan Kebutuhan", "Decision-Making": "Pengambilan Keputusan", "Business Acumen": "Ketajaman Bisnis", "Communication Skills": "Kemampuan Komunikasi", "Written Communication": "Komunikasi Tertulis", "Data Storytelling and Presentation": "Data Storytelling dan Presentasi", "Explaining Technical Concepts to Non-Technical Audiences": "Menjelaskan Konsep Teknis kepada Audiens Non-Teknis", "Stakeholder Management and Communication": "Manajemen dan Komunikasi Stakeholder", "Collaboration and Teamwork": "Kolaborasi dan Kerja Tim", "Cross-Functional Collaboration": "Kolaborasi Lintas Fungsi", "Team Leadership": "Kepemimpinan Tim", "Strategic Project Management": "Manajemen Proyek Strategis", "Time Management": "Manajemen Waktu", "Prioritization": "Penentuan Prioritas", "Organization and Documentation": "Pengorganisasian dan Dokumentasi", "Attention to Detail": "Teliti terhadap Detail", "Attention to Data Accuracy": "Teliti terhadap Akurasi Data", "Ownership and Accountability": "Rasa Tanggung Jawab dan Akuntabilitas", "Adaptability": "Kemampuan Beradaptasi", "Learning Agility": "Cepat Belajar", "Intellectual Curiosity": "Rasa Ingin Tahu", "Creativity": "Kreativitas", "Initiative and Proactiveness": "Inisiatif dan Proaktif", "Receptiveness to Feedback": "Terbuka terhadap Masukan", "Patience and Persistence": "Sabar dan Gigih", "Continuous Improvement": "Perbaikan Berkelanjutan", "Entrepreneurship": "Kewirausahaan", "Multilingual: English and Bahasa Indonesia": "Multibahasa: Inggris dan Indonesia", "Machine learning is my current bootcamp module. I will add it here once a project shows it.": "Machine learning adalah modul bootcamp yang sedang saya jalani. Akan saya tambahkan di sini setelah ada proyek yang menunjukkannya.", "How I work with data": "Cara saya bekerja dengan data", "From a business question to a decision, in five steps.": "Dari pertanyaan bisnis menjadi keputusan, dalam lima langkah.", "Understand the question": "Pahami pertanyaannya", "Clarify what the business needs to decide and what data can answer it.": "Memperjelas keputusan apa yang perlu diambil bisnis dan data apa yang bisa menjawabnya.", "Business context": "Konteks bisnis", "Collect the data": "Kumpulkan data", "Pull only the tables and rows the question needs from the database.": "Mengambil dari database hanya tabel dan baris yang dibutuhkan pertanyaan.", "Clean and prepare": "Bersihkan dan siapkan", "Fix missing values, duplicates and errors so the numbers can be trusted.": "Memperbaiki data kosong, duplikat, dan error agar angkanya bisa dipercaya.", "Analyze and test": "Analisis dan uji", "Explore patterns and use statistics to check which differences are real.": "Mengeksplorasi pola dan memakai statistik untuk memastikan perbedaan mana yang benar-benar nyata.", "Python · Jupyter · Statistics": "Python · Jupyter · Statistika", "Show and recommend": "Sajikan dan rekomendasikan", "Turn findings into charts, dashboards and clear recommendations.": "Mengubah temuan menjadi grafik, dashboard, dan rekomendasi yang jelas.", "What each project is about and the tools I used.": "Gambaran setiap proyek dan tools yang saya gunakan.", "Blue Bird Taxi: Demand and Fleet Insights": "Blue Bird Taxi: Insight Permintaan dan Armada", "Analysis of Blue Bird taxi service requests and driver shifts to find out why many drivers sit idle while some customers cannot get a taxi. Includes data cleaning, statistical testing and regression, and data-driven recommendations tied to measurable KPIs.": "Analisis permintaan layanan taksi Blue Bird dan shift pengemudi untuk mencari tahu mengapa banyak pengemudi menganggur sementara sebagian pelanggan tidak mendapat taksi. Mencakup data cleaning, uji statistik dan regresi, serta rekomendasi berbasis data yang terhubung dengan KPI terukur.", "View code on GitHub": "Lihat kode di GitHub", "Report": "Laporan", "Employee Data Management System": "Sistem Manajemen Data Karyawan", "Python console application for managing employee records with create, read, update and delete. Includes input validation, a recycle bin for restoring deleted records, and a log of every update.": "Aplikasi konsol Python untuk mengelola data karyawan dengan fitur create, read, update, dan delete. Dilengkapi validasi input, recycle bin untuk memulihkan data yang dihapus, dan log setiap perubahan.", "Data validation": "Validasi data", "In progress": "Sedang dikerjakan", "E-Commerce Customer Churn Dashboard": "Dashboard Churn Pelanggan E-Commerce", "Interactive Tableau dashboard that helps an e-commerce team see which customers are likely to leave and what separates them from customers who stay.": "Dashboard Tableau interaktif yang membantu tim e-commerce melihat pelanggan mana yang berpotensi berhenti dan apa yang membedakan mereka dari pelanggan yang bertahan.", "In progress for the Purwadhika Portfolio Building assignment. The link and a short video will be added when it is published.": "Sedang dikerjakan untuk tugas Portfolio Building Purwadhika. Link dan video singkat akan ditambahkan setelah dipublikasikan.", "View dashboard": "Lihat dashboard", "Watch business goal video": "Tonton video tujuan bisnis", "I am open to data analyst, business intelligence and reporting internships in Jakarta and Tangerang, on site or remote. The quickest way to reach me is LinkedIn.": "Saya terbuka untuk magang data analyst, business intelligence, dan reporting di Jakarta dan Tangerang, onsite maupun remote. Cara tercepat menghubungi saya adalah lewat LinkedIn.", "Send me a message": "Kirim pesan", "Full name": "Nama lengkap", "Email address": "Alamat email", "Mobile number": "Nomor HP", "(optional)": "(opsional)", "Subject": "Subjek", "Your message": "Pesan Anda", "Send message": "Kirim pesan", "Location": "Lokasi", "Back to top": "Kembali ke atas", "Main": "Utama", "I am a Data Analyst, Data Scientist and Business Intelligence Analyst": "Saya seorang Data Analyst, Data Scientist, dan Business Intelligence Analyst", "A blue Bluebird taxi driving through a busy city street": "Taksi Bluebird biru melaju di jalan kota yang ramai", "An HR professional reviewing employee records on a computer": "Staf HR sedang memeriksa data karyawan di komputer", "A laptop showing a customer churn analytics dashboard": "Laptop yang menampilkan dashboard analitik churn pelanggan", "Please complete the highlighted fields.": "Mohon lengkapi kolom yang ditandai.", "Sending...": "Mengirim...", "Thanks, your message was sent. I will reply to ": "Terima kasih, pesan Anda sudah terkirim. Saya akan membalas ke ", "Sorry, that did not send. Please email me directly": "Maaf, pesan gagal terkirim. Silakan email saya langsung", " at ": " di ", "Opening your email app. If nothing opens, write to ": "Membuka aplikasi email Anda. Jika tidak terbuka, kirim email ke ", "The contact form is not set up yet.": "Formulir kontak belum diaktifkan."};
+function T(s){return (document.documentElement.lang==="id"&&I18N_ID[s])||s}
+(function(){
+  var nodes=[],attrs=[],skip={SCRIPT:1,STYLE:1,NOSCRIPT:1};
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    for(var p=n.parentNode;p&&p!==document.body;p=p.parentNode){if(skip[p.nodeName]||(p.namespaceURI==="http://www.w3.org/2000/svg"&&!(n.parentNode.classList&&n.parentNode.classList.contains("tr"))))return NodeFilter.FILTER_REJECT}
+    return /[A-Za-z]/.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+  while(w.nextNode()){var n=w.currentNode,key=n.nodeValue.replace(/\s+/g," ").trim();if(I18N_ID[key])nodes.push([n,n.nodeValue,key])}
+  [].forEach.call(document.querySelectorAll("[aria-label],[alt]"),function(el){["aria-label","alt"].forEach(function(a){var v=el.getAttribute(a);if(v&&I18N_ID[v])attrs.push([el,a,v])})});
+  var meta=document.querySelector('meta[name="description"]'),metaEN=meta&&meta.content,titleEN=document.title;
+  function set(lang){
+    document.documentElement.lang=lang;
+    nodes.forEach(function(x){var orig=x[1];x[0].nodeValue=lang==="id"?orig.replace(/\S[\s\S]*\S|\S/,I18N_ID[x[2]]):orig});
+    attrs.forEach(function(x){x[0].setAttribute(x[1],lang==="id"?I18N_ID[x[2]]:x[2])});
+    document.title=lang==="id"?"Naufal Arkan Muhana | Portofolio Data Analyst":titleEN;
+    if(meta)meta.content=lang==="id"?"Naufal Arkan Muhana, Data Analyst. Proyek business analytics, SQL, Python, analisis statistik, dan visualisasi data Tableau yang mengubah data bisnis menjadi keputusan.":metaEN;
+    [].forEach.call(document.querySelectorAll(".lang button"),function(b){b.setAttribute("aria-pressed",b.dataset.lang===lang?"true":"false")});
+    try{localStorage.setItem("lang",lang)}catch(e){}
+  }
+  [].forEach.call(document.querySelectorAll(".lang button"),function(b){b.addEventListener("click",function(){set(b.dataset.lang)})});
+  var saved="en";try{saved=localStorage.getItem("lang")||"en"}catch(e){}
+  if(saved==="id")set("id");
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById("theme-btn"),mq=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+  function cur(){var t=document.documentElement.getAttribute("data-theme");return t||(mq&&mq.matches?"dark":"light")}
+  function label(){b.setAttribute("aria-label",cur()==="dark"?(window.T?T("Switch to light mode"):"Switch to light mode"):(window.T?T("Switch to dark mode"):"Switch to dark mode"))}
+  b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}label()});
+  if(mq&&mq.addEventListener)mq.addEventListener("change",label);
+  [].forEach.call(document.querySelectorAll(".lang button"),function(x){x.addEventListener("click",function(){setTimeout(label,0)})});
+  label();
+})();
+</script>
+</body>
+</html>
