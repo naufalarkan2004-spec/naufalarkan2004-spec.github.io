@@ -1,8 +1,0 @@
-/* Digital Lavender icon system. 24px grid, 1.75 stroke, round caps and joins.
-   Base lines use currentColor; accent lines use --icon-accent. */
-:root{--icon-accent:#8270C4}
-.on-dark,[data-theme="dark"]{--icon-accent:#B8A9E8;color:#F7F5FC}
-.icon{width:24px;height:24px;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:middle}
-.icon-32{width:32px;height:32px}.icon-48{width:48px;height:48px}
-.icon-mono{--icon-accent:currentColor}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--icon-accent:#B8A9E8}}
