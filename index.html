@@ -686,7 +686,8 @@ footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:spac
 /* Fill these in when ready. Anything left empty stays hidden, so no dead links show. */
 var CONFIG = {
   email: "naufalarkan2004@gmail.com",
-  cvUrl: "assets/Naufal-Arkan-Muhana-CV.pdf",
+  cvUrl: "assets/Naufal-Arkan-Muhana-CV-EN.pdf",
+  cvUrlId: "assets/Naufal-Arkan-Muhana-CV-ID.pdf",   // downloaded when the site language is Indonesian
   dashboardUrl: "https://public.tableau.com/views/BluebirdDashboardNewest/1Overview?:language=en-US&:display_count=n&:origin=viz_share_link",   // public Tableau / Looker Studio link
   dashboardVideoUrl: "",
   formEndpoint: "",   // optional Formspree URL, e.g. "https://formspree.io/f/abcdwxyz"
@@ -706,7 +707,12 @@ var CONFIG = {
 (function () {
   function $(id) { return document.getElementById(id); }
   if (CONFIG.email) { $("mail-addr").textContent = CONFIG.email; $("mail-line").hidden = false; }
-  if (CONFIG.cvUrl) { $("cv-link").href = CONFIG.cvUrl; $("cv-link").hidden = false; $("hero-cv").href = CONFIG.cvUrl; $("hero-cv").hidden = false; }
+  window.setCv = function (lang) {
+    var u = (lang === "id" && CONFIG.cvUrlId) ? CONFIG.cvUrlId : CONFIG.cvUrl;
+    if (!u) return;
+    ["cv-link", "hero-cv"].forEach(function (i) { var a = $(i); if (a) { a.href = u; a.setAttribute("download", u.split("/").pop()); a.hidden = false; } });
+  };
+  window.setCv(document.documentElement.lang === "id" ? "id" : "en");
   $("dash-tool").textContent = CONFIG.dashboardTool;
   if (CONFIG.dashboardUrl) {
     $("dash-link").href = CONFIG.dashboardUrl; $("dash-link").hidden = false;
@@ -766,6 +772,7 @@ function T(s){return (document.documentElement.lang==="id"&&I18N_ID[s])||s}
     if(meta)meta.content=lang==="id"?"Naufal Arkan Muhana, Data Analyst. Proyek business analytics, SQL, Python, analisis statistik, dan visualisasi data Tableau yang mengubah data bisnis menjadi keputusan.":metaEN;
     [].forEach.call(document.querySelectorAll(".lang button"),function(b){b.setAttribute("aria-pressed",b.dataset.lang===lang?"true":"false")});
     try{localStorage.setItem("lang",lang)}catch(e){}
+    if(window.setCv)window.setCv(lang);
   }
   [].forEach.call(document.querySelectorAll(".lang button"),function(b){b.addEventListener("click",function(){set(b.dataset.lang)})});
   var saved="en";try{saved=localStorage.getItem("lang")||"en"}catch(e){}
