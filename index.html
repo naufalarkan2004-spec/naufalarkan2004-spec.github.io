@@ -741,8 +741,8 @@ var CONFIG = {
     if(CONFIG.formEndpoint){
       btn.disabled=true; say(T("Sending..."));
       fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)})
-        .then(function(r){if(!r.ok)throw new Error("bad status");f.reset();say(T("Thanks, your message was sent. I will reply to ")+d.email+".","ok")})
-        .catch(function(){say(T("Sorry, that did not send. Please email me directly")+(CONFIG.email?T(" at ")+CONFIG.email:"")+".","err")})
+        .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||String(j.success)==="false"){var e=new Error(j.message||"bad status");e.srv=j.message||"";throw e}return j})}).then(function(){f.reset();say(T("Thanks, your message was sent. I will reply to ")+d.email+".","ok")})
+        .catch(function(e){try{console.warn("Contact form:",e&&e.srv||e)}catch(_){}say(T("Sorry, that did not send. Please email me directly")+(CONFIG.email?T(" at ")+CONFIG.email:"")+".","err")})
         .then(function(){btn.disabled=false});
     }else if(CONFIG.email){
       var body="From: "+d.name+" <"+d.email+">"+(d.phone?"\nPhone: "+d.phone:"")+"\n\n"+d.message;
