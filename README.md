@@ -1,6 +1,6 @@
 # Naufal Arkan Muhana: Portfolio
 
-Personal portfolio website (single-page, plain HTML, CSS and JavaScript) for Data Analyst applications.
+Personal portfolio website (single-page, plain HTML, CSS and JavaScript) for Business Analyst and data-focused business roles.
 
 - **Live site:** https://naufalarkan2004-spec.github.io
 - **Sections:** About, How I work with data, Projects, Experience & Education, Skills, Contact
@@ -10,9 +10,9 @@ Personal portfolio website (single-page, plain HTML, CSS and JavaScript) for Dat
 ## Projects
 
 1. Blue Bird Taxi: demand and fleet utilization analysis (MySQL, Python, statistics)
-2. Indonesia Well-being: statistical analysis of the World Happiness Report (Python, statistics)
-3. Blue Bird Operations Monitoring Dashboard (Tableau, continuation of the Blue Bird analysis)
-4. NYC Green Taxi carbon emissions and EV charging gap (data storytelling, BigQuery, Python)
+2. Blue Bird Operations Monitoring Dashboard (Tableau, continuation of the Blue Bird analysis)
+3. NYC Green Taxi carbon emissions and EV charging gap (data storytelling, BigQuery, Python)
+4. Indonesia Well-being: statistical analysis of the World Happiness Report (Python, statistics)
 5. Employee Data Management & Validation System (Python console application)
 
 Each project card has a short summary, three dropdowns (Context / Problem, Key Findings, Impact / Recommendations) and links to code, dashboard or report where available.
